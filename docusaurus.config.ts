@@ -51,7 +51,8 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
 
     colorMode: {
-      // respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: true,
     },
 
     navbar: {
@@ -119,7 +120,7 @@ const config: Config = {
 
     prism: {
       theme: prismThemes.dracula,
-      // darkTheme: prismThemes.github,
+      darkTheme: prismThemes.nightOwl,
     },
   } satisfies Preset.ThemeConfig,
 };

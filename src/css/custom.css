@@ -1,34 +1,60 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  /* --ifm-color-primary: #2e8555; */
-  /* --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary - clean dark for light mode */
+  /* --ifm-color-primary: #0a0a0a;
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #1a1a1a;
+  --ifm-color-primary-lighter: #2a2a2a;
+  --ifm-color-primary-lightest: #3a3a3a; */
+
+  --ifm-color-primary: #7c3aed;          /* vibrant violet */
+  --ifm-color-primary-dark: #6d28d9;
+  --ifm-color-primary-darker: #5b21b6;
+  --ifm-color-primary-darkest: #4c1d95;
+  --ifm-color-primary-light: #8b5cf6;
+  --ifm-color-primary-lighter: #a78bfa;
+  --ifm-color-primary-lightest: #c4b5fd;
+
+  /* Backgrounds - clean light mode */
+  --ifm-background-color: #fafafa;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #f4f4f5;
+
+  /* Code */
+  --ifm-pre-background: #f4f4f5;
+  --ifm-code-background: #f4f4f5;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-color-primary: #2563eb; */
-  /* --ifm-background-color: #ffffff; */
-  /* --ifm-navbar-background-color: #f8fafc; */
+  --docusaurus-highlighted-code-line-bg: rgba(10, 10, 10, 0.06);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  /* --ifm-color-primary: #2563eb; */
-  /* --ifm-color-primary: #25c2a0; */
-  /* --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3); */
+  /* Primary - soft white / light gray (Grok style) */
+  /* --ifm-color-primary: #e5e5e5;
+  --ifm-color-primary-dark: #d4d4d4;
+  --ifm-color-primary-darker: #c4c4c4;
+  --ifm-color-primary-darkest: #a3a3a3;
+  --ifm-color-primary-light: #f0f0f0;
+  --ifm-color-primary-lighter: #f5f5f5;
+  --ifm-color-primary-lightest: #fafafa; */
+
+  --ifm-color-primary: #d97706;
+  --ifm-color-primary-dark: #b45309;
+  --ifm-color-primary-darker: #92400e;
+  --ifm-color-primary-darkest: #78350f;
+  --ifm-color-primary-light: #f59e0b;
+  --ifm-color-primary-lighter: #fbbf24;
+  --ifm-color-primary-lightest: #fcd34d;
+
+  /* Backgrounds - true Grok near-black */
+  --ifm-background-color: #0a0a0a;
+  --ifm-background-surface-color: #141414;
+  --ifm-navbar-background-color: #0a0a0a;
+  --ifm-footer-background-color: #050505;
+
+  /* Code blocks */
+  --ifm-pre-background: #141414;
+  --ifm-code-background: #141414;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
 }
