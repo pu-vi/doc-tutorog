@@ -1,0 +1,664 @@
+---
+title: Institute Owner / Organization
+sidebar_position: 2
+---
+
+## 1. Role Overview
+
+The **Organization / Institute Owner** is the primary operator of an organization on Tutorog.
+
+This could be the owner of:
+
+* A coaching institute
+* Dance academy
+* Music school
+* Sports academy
+* Fitness center
+* Coding institute
+* Art school
+* Tutoring center
+* Any other organization providing learning, training, or mentoring services
+
+The organization owner uses Tutorog to **establish their presence, manage their operations, serve their students, and grow their organization**.
+
+Their primary expectation is simple:
+
+> **"Tutorog should help me run my institute without requiring me to become a technology expert."**
+
+---
+
+# 2. Primary Goals
+
+The Organization Owner should be able to:
+
+1. Create and maintain their organization's presence on Tutorog.
+2. Add and manage tutors/trainers.
+3. Define what they teach through courses.
+4. Organize students into batches/classes.
+5. Manage student enrollment.
+6. Track attendance and student participation.
+7. Manage fees and payment records.
+8. Share learning materials with students.
+9. Communicate with students and parents.
+10. Understand how their organization is performing.
+11. Build trust and reputation through reviews.
+12. Spend less time on administration and more time running their organization.
+
+---
+
+# 3. Organization Owner Journey
+
+The overall journey can be represented as:
+
+```text
+Create Organization
+        ↓
+Build Organization Profile
+        ↓
+Add Tutors / Trainers
+        ↓
+Create Courses
+        ↓
+Create Batches / Classes
+        ↓
+Enroll Students
+        ↓
+Run Classes
+        ↓
+Track Attendance & Progress
+        ↓
+Share Materials & Communicate
+        ↓
+Manage Fees
+        ↓
+View Reports
+        ↓
+Collect Reviews
+        ↓
+Grow Organization
+```
+
+This is the **core operational journey** of an organization on Tutorog.
+
+---
+
+# 4. Organization Onboarding
+
+## Expectation
+
+The owner should be able to create an organization quickly without needing technical knowledge.
+
+They should provide basic information such as:
+
+* Organization name
+* Category
+* Description
+* Location
+* Contact information
+* Logo
+* Cover/banner image
+* Website/social links where applicable
+* Services offered
+
+Tutorog should then create the organization's initial public presence.
+
+## Journey
+
+```text
+Sign Up / Login
+      ↓
+Create Organization
+      ↓
+Choose Category
+      ↓
+Enter Basic Information
+      ↓
+Add Branding
+      ↓
+Preview Public Page
+      ↓
+Publish
+```
+
+The onboarding experience should make the owner feel that they are **setting up their institute**, rather than configuring software.
+
+---
+
+# 5. Create & Customize Tutorog Page
+
+## Expectation
+
+Every organization should have a public-facing page that acts as its digital presence on Tutorog.
+
+The owner should be able to customize:
+
+* Organization name
+* Logo
+* Cover image
+* Description
+* About section
+* Categories
+* Subjects/services
+* Contact information
+* Location
+* Operating hours
+* Courses
+* Trainers/tutors
+* Reviews
+* Photos
+* Social links
+
+The page should help a prospective student or parent answer:
+
+> **Who are you, what do you teach, where are you located, and why should I choose you?**
+
+## Owner Journey
+
+```text
+Organization Dashboard
+        ↓
+Customize Profile
+        ↓
+Add Information & Branding
+        ↓
+Preview
+        ↓
+Publish
+        ↓
+Share Tutorog Page
+```
+
+The public page should eventually become a **shareable identity for the organization**.
+
+---
+
+# 6. Add Tutors / Trainers
+
+## Expectation
+
+The owner should be able to create their teaching team.
+
+They should be able to:
+
+* Invite tutors/trainers.
+* Create trainer profiles.
+* Assign roles.
+* Assign tutors to courses.
+* Assign tutors to batches.
+* View tutor activity.
+* Activate/deactivate tutors.
+* Manage tutor permissions.
+
+For example:
+
+```text
+Organization
+│
+├── Owner
+│
+├── Tutor: Mathematics
+│
+├── Tutor: Physics
+│
+├── Trainer: Cricket
+│
+└── Trainer: Dance
+```
+
+The owner should not need to create completely separate accounts manually if Tutorog can support an **invitation-based onboarding flow**.
+
+---
+
+# 7. Create Courses
+
+## Expectation
+
+The owner should be able to describe what their organization offers.
+
+A course may include:
+
+* Course name
+* Description
+* Category
+* Subject
+* Duration
+* Course fee
+* Learning objectives
+* Course materials
+* Eligibility
+* Course image
+* Status
+
+For example:
+
+```text
+Mathematics Foundation
+│
+├── Category: Academics
+├── Subject: Mathematics
+├── Duration: 6 Months
+├── Fee: ₹12,000
+└── Multiple Batches
+```
+
+### Important Concept
+
+A **course describes what is being taught**.
+
+A **batch describes when and to whom it is being taught**.
+
+This distinction allows one course to have multiple batches.
+
+---
+
+# 8. Create Batches / Classes
+
+## Expectation
+
+Once a course exists, the owner should be able to organize actual classes.
+
+A batch may contain:
+
+* Batch name
+* Course
+* Tutor
+* Students
+* Schedule
+* Start date
+* End date
+* Capacity
+* Location
+* Status
+
+Example:
+
+```text
+Mathematics Foundation
+        │
+        ├── Batch A
+        │     ├── Mon/Wed/Fri
+        │     ├── 5:00 PM
+        │     └── Tutor: Amit
+        │
+        └── Batch B
+              ├── Tue/Thu/Sat
+              ├── 6:00 PM
+              └── Tutor: Neha
+```
+
+The owner expects batch management to be simple enough for everyday use.
+
+---
+
+# 9. Enroll Students
+
+## Expectation
+
+The owner should be able to get students into the right courses and batches.
+
+Possible enrollment journeys include:
+
+### Owner Adds Student
+
+```text
+Student approaches institute
+        ↓
+Owner creates/selects student
+        ↓
+Select Course
+        ↓
+Select Batch
+        ↓
+Enrollment Created
+```
+
+### Student/Parent Requests Enrollment
+
+```text
+Parent discovers organization
+        ↓
+Views course
+        ↓
+Requests enrollment
+        ↓
+Organization receives request
+        ↓
+Owner reviews
+        ↓
+Approve / Reject
+        ↓
+Student joins batch
+```
+
+The system should support both **offline/institute-originated enrollment** and **Tutorog-originated discovery**.
+
+---
+
+# 10. Track Attendance
+
+## Expectation
+
+Taking attendance should be one of the easiest daily tasks.
+
+The owner or authorized tutor should be able to:
+
+1. Select batch.
+2. Select class/date.
+3. See enrolled students.
+4. Mark attendance.
+5. Save.
+
+```text
+Today's Classes
+      ↓
+Select Batch
+      ↓
+Student List
+      ↓
+Present / Absent
+      ↓
+Save Attendance
+```
+
+The owner should also be able to see:
+
+* Individual attendance history.
+* Batch attendance.
+* Attendance percentage.
+* Students with poor attendance.
+* Attendance trends.
+
+---
+
+# 11. Manage Fees
+
+## Expectation
+
+Tutorog should help the organization know **who has paid, who hasn't, and what is due**.
+
+The owner should be able to:
+
+* Define course/batch fees.
+* Record payments.
+* Track outstanding amounts.
+* View payment history.
+* Generate receipts.
+* Record discounts where applicable.
+* Track payment status.
+* Send reminders.
+
+Example:
+
+```text
+Student: Rahul
+Course: Mathematics Foundation
+
+Total Fee       ₹12,000
+Paid             ₹8,000
+Outstanding      ₹4,000
+Next Due Date    10 Sep
+```
+
+The initial MVP can support **fee tracking**, even if online payment processing is introduced later.
+
+---
+
+# 12. Share Learning Material
+
+## Expectation
+
+The organization should be able to provide learning resources to enrolled students.
+
+Materials could include:
+
+* PDFs
+* Documents
+* Images
+* Videos
+* Links
+* Notes
+* Assignments
+* Worksheets
+
+Materials may be shared at different levels:
+
+```text
+Organization
+     │
+     ├── Course Material
+     │
+     └── Batch Material
+```
+
+The owner should be able to control who can access the material.
+
+For example, a Mathematics worksheet may be available only to students enrolled in a particular batch.
+
+---
+
+# 13. Communicate with Students & Parents
+
+## Expectation
+
+The organization needs a simple communication channel with its community.
+
+Common communication needs include:
+
+* Class announcements
+* Schedule changes
+* Holiday notices
+* Fee reminders
+* Exam announcements
+* Assignment reminders
+* General institute announcements
+* Individual communication
+
+Communication should ideally support different audiences:
+
+```text
+Organization
+│
+├── Everyone
+│
+├── Specific Course
+│
+├── Specific Batch
+│
+├── Students
+│
+└── Parents
+```
+
+The owner should not have to repeatedly send the same message individually.
+
+---
+
+# 14. View Reports
+
+## Expectation
+
+The owner needs to understand how their organization is performing.
+
+Useful reports may include:
+
+### Students
+
+* Total students
+* Active students
+* New enrollments
+* Withdrawals
+* Students by course/batch
+
+### Attendance
+
+* Overall attendance
+* Batch attendance
+* Students with low attendance
+
+### Fees
+
+* Total fees
+* Collected fees
+* Outstanding fees
+* Payment history
+
+### Courses & Batches
+
+* Active courses
+* Active batches
+* Batch capacity
+* Enrollment levels
+
+### Engagement
+
+* Material access
+* Student activity
+* Parent engagement
+
+The reports should answer:
+
+> **"How is my institute doing, and what needs my attention?"**
+
+---
+
+# 15. Build Reputation Through Reviews
+
+## Expectation
+
+The organization should be able to build a trustworthy public reputation through genuine student and parent feedback.
+
+The organization owner should be able to:
+
+* See ratings.
+* Read reviews.
+* Respond to reviews where appropriate.
+* Report inappropriate reviews.
+* Monitor reputation over time.
+
+Reviews should be connected to real experiences wherever possible.
+
+For example:
+
+```text
+Organization
+     │
+     ├── Courses
+     ├── Students
+     └── Reviews
+             │
+             ├── Rating
+             ├── Feedback
+             └── Response
+```
+
+The organization should **not be able to simply delete negative reviews**. Tutorog should provide a fair moderation process.
+
+---
+
+# 16. Daily Owner Experience
+
+Once the organization is established, the owner's daily experience should become much simpler.
+
+A typical day might look like:
+
+```text
+Login
+  ↓
+Dashboard
+  ↓
+"What's happening today?"
+  │
+  ├── 3 classes today
+  ├── 42 students expected
+  ├── 5 attendance records pending
+  ├── 3 fee payments due
+  ├── 2 new enrollment requests
+  └── 1 parent message
+  ↓
+Take Action
+  ↓
+Continue Running Institute
+```
+
+The dashboard should therefore prioritize **actions and exceptions**, not just statistics.
+
+---
+
+# 17. Organization Dashboard Expectations
+
+The owner dashboard should answer five questions:
+
+### 1. What is happening today?
+
+* Today's classes
+* Today's attendance
+* Important announcements
+
+### 2. What needs my attention?
+
+* Enrollment requests
+* Pending fees
+* Missing attendance
+* Unanswered messages
+* Reports/issues
+
+### 3. How are my students doing?
+
+* Attendance
+* Progress
+* Engagement
+* At-risk students
+
+### 4. How is my institute performing?
+
+* Student growth
+* Course enrollment
+* Fee collection
+* Reviews
+
+### 5. What can I do next?
+
+The dashboard should provide clear actions such as:
+
+**Create Course · Add Student · Create Batch · Take Attendance · Record Payment · Send Announcement**
+
+---
+
+# 18. What the Organization Owner Should NOT Need to Worry About
+
+Tutorog should hide platform complexity from the organization owner.
+
+They should not need to understand:
+
+* Platform-level user management.
+* Platform categories implementation.
+* Database relationships.
+* Platform moderation infrastructure.
+* Internal notification systems.
+* Technical hosting.
+* Platform-wide analytics.
+
+Their mental model should remain:
+
+> **My organization → My tutors → My courses → My batches → My students**
+
+This separation is important because the organization owner is a **customer/operator of Tutorog**, not an administrator of Tutorog itself.
+
+---
+
+# 19. Success Criteria
+
+The Organization Owner should feel that Tutorog is:
+
+* **Easy** — I can use it without technical expertise.
+* **Complete** — I can manage the important parts of my institute.
+* **Organized** — I always know what is happening.
+* **Student-centric** — I can understand and support my students.
+* **Professional** — My Tutorog page represents my organization well.
+* **Efficient** — Routine administration takes less time.
+* **Trustworthy** — My information and student data are handled responsibly.
+* **Growth-oriented** — Tutorog helps new students discover my organization.
+
+## Core Principle
+
+> **The Organization Owner uses Tutorog to run and grow their learning organization, while Tutorog handles the complexity behind the scenes.**

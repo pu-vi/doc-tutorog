@@ -1,0 +1,558 @@
+---
+title: Platform Administrator (Admin)
+sidebar_position: 1
+---
+
+## 1. Role Overview
+
+The **Platform Administrator** is responsible for keeping Tutorog healthy, trustworthy, organized, and operational at the platform level.
+
+Unlike an Organization Administrator, the Platform Administrator does not manage the day-to-day activities of a particular institute, academy, tutor, or student. Instead, they oversee the **entire Tutorog ecosystem**.
+
+Their primary responsibility is to ensure that:
+
+* Organizations can successfully operate on Tutorog.
+* The platform's categories and subjects remain well organized.
+* Content and user activity meet Tutorog's standards.
+* Problems, reports, and disputes are handled appropriately.
+* The platform remains safe, reliable, and useful for all participants.
+
+---
+
+# 2. Primary Goals
+
+The Platform Administrator should be able to:
+
+1. **Manage the Tutorog ecosystem**
+
+   * Approve, review, suspend, or deactivate organizations.
+   * Manage organization information and status.
+   * Understand what is happening across the platform.
+
+2. **Maintain the platform's learning taxonomy**
+
+   * Manage categories.
+   * Manage subjects and activities.
+   * Organize the discovery structure used by organizations and learners.
+
+3. **Maintain quality and safety**
+
+   * Review reported content.
+   * Moderate inappropriate or misleading content.
+   * Take action against policy violations.
+
+4. **Manage platform users**
+
+   * Find and inspect users.
+   * Understand user activity.
+   * Suspend or restrict accounts when necessary.
+
+5. **Resolve problems**
+
+   * Review reports and complaints.
+   * Investigate disputes.
+   * Take appropriate administrative action.
+
+6. **Monitor platform health**
+
+   * Understand overall platform activity.
+   * Identify unusual activity or problems.
+   * Monitor important operational metrics.
+
+---
+
+# 3. Administrator Journey
+
+The Platform Administrator's journey can be viewed as:
+
+**Monitor → Discover → Investigate → Act → Verify**
+
+```text
+                    PLATFORM ADMINISTRATOR
+                             │
+                             ▼
+                         Dashboard
+                             │
+             ┌───────────────┼────────────────┐
+             ▼               ▼                ▼
+       Organizations     Users & Activity   Platform Health
+             │               │                │
+             └───────────────┼────────────────┘
+                             ▼
+                       Issues / Reports
+                             │
+                             ▼
+                         Investigate
+                             │
+                             ▼
+                           Action
+                             │
+                             ▼
+                          Resolve
+                             │
+                             ▼
+                         Monitor Again
+```
+
+The administrator should not need to constantly inspect every organization or user manually. The platform should surface **things that require attention**.
+
+---
+
+# 4. Organization Management
+
+## Expectation
+
+The administrator expects to have a complete overview of organizations operating on Tutorog.
+
+They should be able to:
+
+* View all organizations.
+* Search and filter organizations.
+* Review organization profiles.
+* Approve organizations where approval is required.
+* Suspend or deactivate organizations.
+* Reactivate organizations.
+* View organization activity.
+* Identify organizations with unusual or problematic activity.
+* View organization owners and staff.
+* See the number of students, tutors, courses, and batches associated with an organization.
+
+## Typical Journey
+
+```text
+New Organization
+      ↓
+Organization Registration
+      ↓
+Review
+      ↓
+Approve / Request Changes / Reject
+      ↓
+Organization Active
+      ↓
+Monitor Activity
+      ↓
+Issue?
+ ┌────┴────┐
+ No        Yes
+ │          │
+Continue   Investigate
+             ↓
+       Warn / Restrict / Suspend
+```
+
+## Important Expectations
+
+The administrator should **not normally need to edit an organization's operational data** such as attendance or individual student records.
+
+Instead, they need enough visibility to:
+
+> **Understand the organization → identify problems → take administrative action.**
+
+---
+
+# 5. Category & Subject Management
+
+## Expectation
+
+Tutorog needs a consistent structure for discovering learning opportunities.
+
+The administrator manages the platform's taxonomy, including:
+
+* Categories
+* Subjects
+* Activities
+* Subcategories where required
+* Category descriptions
+* Subject descriptions
+* Visibility and publishing status
+
+For example:
+
+```text
+Academics
+├── Mathematics
+├── Physics
+├── Chemistry
+└── Biology
+
+Sports
+├── Cricket
+├── Football
+├── Badminton
+└── Tennis
+
+Dance
+├── Classical Dance
+├── Bollywood
+├── Hip-Hop
+└── Contemporary
+```
+
+## Administrator Journey
+
+```text
+Identify Need
+     ↓
+Create / Edit Category
+     ↓
+Add / Organize Subjects
+     ↓
+Publish
+     ↓
+Organizations Can Use Them
+     ↓
+Monitor Usage
+     ↓
+Improve Taxonomy
+```
+
+## Key Principle
+
+Categories and subjects should be **platform-controlled concepts**, rather than allowing every organization to create completely independent versions.
+
+Organizations can describe their offerings, but Tutorog should maintain the underlying discovery structure.
+
+---
+
+# 6. Content Moderation
+
+## Expectation
+
+The administrator is responsible for maintaining the quality and safety of publicly visible Tutorog content.
+
+Potential content includes:
+
+* Organization descriptions
+* Tutor profiles
+* Course descriptions
+* Images
+* Announcements
+* Reviews
+* Other publicly visible content
+
+The administrator should be able to:
+
+* Review reported content.
+* View the content in context.
+* Understand who created it.
+* See previous moderation actions.
+* Approve or remove content where appropriate.
+* Warn users or organizations.
+* Restrict accounts for serious or repeated violations.
+
+## Moderation Journey
+
+```text
+Content Created
+      ↓
+Published / Awaiting Review
+      ↓
+Reported or Flagged?
+      │
+   ┌──┴──┐
+   No    Yes
+   │      │
+Remain   Review
+Visible    ↓
+        Investigate
+           ↓
+     ┌─────┼─────┐
+     ▼     ▼     ▼
+   Keep   Edit   Remove
+           /      /
+        Restrict Suspend
+```
+
+Moderation should ideally maintain an **audit trail** so that administrative decisions can be understood later.
+
+---
+
+# 7. User Management
+
+## Expectation
+
+The administrator needs visibility into the platform's user ecosystem without becoming involved in normal user activity.
+
+They should be able to:
+
+* Search users.
+* View account status.
+* Identify the user's role.
+* See organizations associated with the user.
+* See relevant activity.
+* Review account history.
+* Suspend or restrict accounts.
+* Reactivate accounts.
+* Handle problematic or abusive accounts.
+
+## Important Distinction
+
+Tutorog has different types of people and entities:
+
+```text
+User Account
+     │
+     ├── Organization Administrator
+     ├── Tutor / Trainer
+     └── Parent / Guardian
+             │
+             ├── Student 1
+             ├── Student 2
+             └── Student 3
+```
+
+The administrator should therefore be able to understand **relationships**, not just individual accounts.
+
+For example:
+
+> "This user is a parent managing two students who are enrolled in three batches at two organizations."
+
+That context can become important when investigating reports or disputes.
+
+---
+
+# 8. Platform Activity
+
+## Expectation
+
+The administrator should have a high-level view of what is happening across Tutorog.
+
+Useful activity indicators may include:
+
+* New organizations
+* New users
+* New students
+* New courses
+* New batches
+* New enrollments
+* Active organizations
+* Active tutors
+* Active students
+* New reviews
+* New reports
+* Pending approvals
+* Suspended accounts
+
+The goal isn't to track every event manually.
+
+The goal is:
+
+> **Know what is happening, notice what is unusual, and act when necessary.**
+
+---
+
+# 9. Reports & Disputes
+
+## Expectation
+
+Users should have a way to report problems, and the administrator should have a centralized place to handle them.
+
+Possible reports include:
+
+* Inappropriate content
+* Fake organization
+* Misleading course information
+* Inappropriate behavior
+* Harassment
+* Spam
+* Fake reviews
+* Payment-related complaints
+* Organization/student disputes
+* Other policy violations
+
+## Report Journey
+
+```text
+User Reports Issue
+       ↓
+Report Created
+       ↓
+Admin Notification / Queue
+       ↓
+Admin Reviews Report
+       ↓
+Collect Context
+       ↓
+Determine Severity
+       ↓
+Take Action
+       ↓
+Record Decision
+       ↓
+Resolve Report
+```
+
+## Report Status
+
+A simple initial lifecycle could be:
+
+**Open → Investigating → Action Required → Resolved**
+
+Some reports may also be:
+
+**Dismissed**
+
+when the administrator determines that no violation occurred.
+
+---
+
+# 10. Dispute Handling
+
+Not every dispute should result in an immediate suspension.
+
+The administrator should be able to:
+
+1. Understand the complaint.
+2. Identify the parties involved.
+3. Review relevant records.
+4. Review communication or evidence where permitted.
+5. Determine whether Tutorog policy applies.
+6. Take appropriate action.
+7. Record the decision.
+
+For example:
+
+```text
+Parent
+  │
+  │ Complaint
+  ▼
+Tutorog
+  │
+  ▼
+Administrator
+  │
+  ├── Organization information
+  ├── Enrollment
+  ├── Fee records
+  ├── Relevant activity
+  └── Previous reports
+          │
+          ▼
+       Decision
+```
+
+The administrator should act as a **platform governance layer**, rather than becoming the operational manager of an organization.
+
+---
+
+# 11. Platform Health
+
+## Expectation
+
+The administrator should have a dashboard that answers:
+
+> **"Is Tutorog healthy right now?"**
+
+This can eventually include:
+
+### Platform Activity
+
+* Active organizations
+* Active tutors
+* Active students
+* New registrations
+* New enrollments
+
+### Operational Health
+
+* Pending organization approvals
+* Pending reports
+* Failed operations
+* Notification failures
+* Payment issues
+
+### Trust & Safety
+
+* Reports received
+* Reports resolved
+* Suspended organizations
+* Suspended users
+* Flagged content
+
+### Growth
+
+* Organizations added
+* Students added
+* Enrollment growth
+* Course growth
+* User engagement
+
+The exact metrics can evolve; the MVP should focus on metrics that lead to **actionable decisions**.
+
+---
+
+# 12. Administrator Dashboard
+
+The dashboard should be **action-oriented**, rather than simply being a collection of statistics.
+
+A useful first version could look like:
+
+```text
+┌──────────────────────────────────────────────┐
+│              Tutorog Admin                   │
+├──────────────────────────────────────────────┤
+│                                              │
+│  Organizations    Users       Students       │
+│      128          2,450         3,820        │
+│                                              │
+├──────────────────────────────────────────────┤
+│  NEEDS ATTENTION                             │
+│                                              │
+│  ⚠ 7 organizations awaiting review           │
+│  ⚠ 4 reports awaiting investigation           │
+│  ⚠ 2 disputed reviews                         │
+│  ⚠ 1 organization temporarily restricted     │
+│                                              │
+├──────────────────────────────────────────────┤
+│  RECENT ACTIVITY                             │
+│                                              │
+│  New organization registered                 │
+│  New report submitted                        │
+│  Course published                            │
+│  Organization approved                       │
+│                                              │
+└──────────────────────────────────────────────┘
+```
+
+The most important part of the dashboard is the **Needs Attention** section.
+
+---
+
+# 13. What the Administrator Should NOT Do
+
+The Platform Administrator should not become a super-user who performs everyone's daily work.
+
+For example, they generally should not:
+
+* Take attendance for organizations.
+* Manage individual batch schedules.
+* Enroll students manually unless resolving an issue.
+* Manage an organization's daily fees.
+* Manage individual student progress.
+* Create courses on behalf of organizations.
+* Act as a tutor.
+
+Instead:
+
+> **Organizations manage their own operations. Platform Administrators govern the platform.**
+
+This distinction will be important when designing permissions.
+
+---
+
+# 14. Success Criteria
+
+The Platform Administrator should feel that Tutorog is:
+
+* **Observable** — they can understand what is happening.
+* **Controllable** — they can intervene when necessary.
+* **Safe** — problematic activity can be addressed.
+* **Organized** — categories and content remain consistent.
+* **Traceable** — important administrative actions have an audit history.
+* **Scalable** — the platform doesn't require manual supervision of every organization.
+
+## Core Principle
+
+> **The Platform Administrator manages the health and integrity of the Tutorog ecosystem, not the day-to-day operations of individual organizations.**
