@@ -1,0 +1,612 @@
+---
+title: Courses
+sidebar_position: 1
+---
+
+## 1. Overview
+
+A **Course** represents a structured learning or training program offered by an Organization on Tutorog.
+
+A course defines **what is being taught**, while a Batch defines **when, where, and to whom it is being taught**.
+
+For example:
+
+> **Course:** Mathematics Foundation
+> **Batch:** Class 10 — Evening Batch, Mon/Wed/Fri at 5 PM
+
+A single course can have multiple batches, allowing an organization to offer the same program to different groups of students.
+
+---
+
+## 2. Purpose of Courses
+
+Courses provide a common structure for:
+
+* Describing an organization's offerings.
+* Helping visitors discover learning opportunities.
+* Organizing students' learning.
+* Connecting tutors and batches.
+* Sharing learning materials.
+* Tracking progress.
+* Managing course-related fees.
+* Presenting consistent information to prospective students.
+
+The course is therefore one of the central entities connecting **discovery, enrollment, and learning**.
+
+---
+
+## 3. Course Lifecycle
+
+A course generally follows this lifecycle:
+
+```text
+Draft
+  ↓
+Published
+  ↓
+Active
+  ↓
+Archived
+```
+
+### Draft
+
+The organization is creating or preparing the course.
+
+It should not normally be visible to the public.
+
+### Published
+
+The course is available for discovery and enrollment, depending on the organization's enrollment settings.
+
+### Active
+
+The course is currently being delivered through one or more active batches.
+
+### Archived
+
+The organization no longer offers the course but may want to retain its historical data.
+
+Archived courses should generally not accept new enrollments.
+
+---
+
+## 4. Course Information
+
+A course should contain enough information for both **prospective learners** and **existing students**.
+
+### Basic Information
+
+* Course name
+* Description
+* Category
+* Subject
+* Cover/image
+* Learning objectives
+* Course level
+* Target age/learner group
+
+### Course Structure
+
+* Duration
+* Topics/modules
+* Learning outcomes
+* Course materials
+* Assignments
+* Assessments where applicable
+
+### Commercial Information
+
+* Course fee
+* Fee structure
+* Discounts where applicable
+* Payment terms
+
+### Discovery Information
+
+* Organization
+* Available batches
+* Location
+* Delivery mode
+* Tutor/trainer
+* Ratings/reviews where applicable
+
+---
+
+## 5. Course vs Batch
+
+This distinction is fundamental to Tutorog.
+
+### Course
+
+Defines:
+
+> **What are we teaching?**
+
+### Batch
+
+Defines:
+
+> **When and to whom are we teaching it?**
+
+For example:
+
+```text
+Course
+Mathematics Foundation
+│
+├── Batch A
+│   ├── Mon/Wed/Fri
+│   ├── 5:00 PM
+│   ├── Tutor: Amit
+│   └── 20 students
+│
+├── Batch B
+│   ├── Tue/Thu/Sat
+│   ├── 6:00 PM
+│   ├── Tutor: Neha
+│   └── 18 students
+│
+└── Batch C
+    ├── Weekend
+    ├── 10:00 AM
+    ├── Tutor: Amit
+    └── 15 students
+```
+
+The same course content and learning objectives can therefore be reused across multiple batches.
+
+---
+
+## 6. Course Ownership
+
+Every course belongs to an **Organization**.
+
+```text
+Organization
+    │
+    ├── Course
+    │     ├── Batch
+    │     ├── Batch
+    │     └── Batch
+    │
+    └── Course
+          ├── Batch
+          └── Batch
+```
+
+The Organization Owner is responsible for creating and managing courses.
+
+Tutors may contribute to course content depending on their permissions, but they should not automatically have organization-wide course management access.
+
+---
+
+## 7. Categories & Subjects
+
+Courses should be connected to Tutorog's platform-managed taxonomy.
+
+For example:
+
+```text
+Category: Academics
+    ↓
+Subject: Mathematics
+    ↓
+Course: Mathematics Foundation
+```
+
+Or:
+
+```text
+Category: Dance
+    ↓
+Subject: Classical Dance
+    ↓
+Course: Kathak Beginners
+```
+
+This allows Tutorog to maintain a consistent discovery system across organizations.
+
+Organizations should be able to describe their courses freely, while the underlying **categories and subjects remain standardized** by the platform.
+
+---
+
+## 8. Course Discovery
+
+Courses are an important part of the public Tutorog experience.
+
+A prospective student or parent should be able to discover courses through:
+
+* Category pages
+* Subject pages
+* Organization profiles
+* Search
+* Location-based discovery
+* Recommendations
+* Shared course links
+
+A course listing should provide enough information to decide whether to explore further.
+
+Example:
+
+```text
+Mathematics Foundation
+
+Academics · Mathematics
+
+For Classes 9–10
+Duration: 6 months
+Starting from ₹12,000
+
+★ 4.8
+
+3 batches available
+
+[ View Course ]
+```
+
+---
+
+## 9. Course Detail Page
+
+The course detail page should answer the visitor's most important questions.
+
+### What is this?
+
+Course name and description.
+
+### Who is it for?
+
+Age, grade, skill level, or eligibility.
+
+### What will I learn?
+
+Topics and learning outcomes.
+
+### Who teaches it?
+
+Tutor/trainer information where appropriate.
+
+### When is it offered?
+
+Available batches and schedules.
+
+### How much does it cost?
+
+Fee information.
+
+### Who offers it?
+
+Organization information and reputation.
+
+### How do I join?
+
+Enrollment or enquiry options.
+
+---
+
+## 10. Course & Learning Content
+
+A course can provide the structure around learning content.
+
+For example:
+
+```text
+Mathematics Foundation
+│
+├── Module 1 — Number Systems
+│   ├── Notes
+│   ├── Worksheet
+│   └── Assignment
+│
+├── Module 2 — Algebra
+│   ├── Notes
+│   ├── Video
+│   └── Assignment
+│
+└── Module 3 — Geometry
+    ├── Notes
+    └── Assignment
+```
+
+This structure allows the same course framework to be used by multiple batches.
+
+However, the actual delivery of content may be customized by the tutor or batch.
+
+---
+
+## 11. Course Enrollment
+
+A course can be associated with one or more enrollment paths.
+
+### Organization-led
+
+The student contacts or visits the organization and the organization creates the enrollment.
+
+### Tutorog-led
+
+The student or parent discovers the course on Tutorog and requests enrollment.
+
+### Direct enrollment
+
+The organization may allow a student to directly enroll in an available batch.
+
+The course itself should not necessarily determine the enrollment workflow. This can be configured at the organization/course level.
+
+---
+
+## 12. Course Fees
+
+A course may have a default fee, but the actual fee charged can depend on the organization and enrollment arrangement.
+
+For example:
+
+```text
+Course Fee
+₹12,000
+
+Possible variations:
+├── Monthly payment
+├── Full payment
+├── Discounted enrollment
+└── Batch-specific pricing
+```
+
+This suggests that the Course should provide a **default commercial definition**, while actual financial records should belong to the student's enrollment/payment relationship.
+
+This prevents historical payment records from changing when the course's current price changes.
+
+---
+
+## 13. Course Materials & Assignments
+
+Course-level resources can provide reusable content.
+
+For example:
+
+* Standard course notes.
+* Reference materials.
+* Worksheets.
+* Videos.
+* Course assignments.
+
+However, tutors may also need to provide **batch-specific or student-specific material**.
+
+Therefore:
+
+```text
+Course Material
+      │
+      ├── Available to all batches
+      │
+      └── Reusable course content
+
+Batch Material
+      │
+      └── Specific to a particular class/group
+```
+
+This separation gives organizations flexibility without duplicating course structures.
+
+---
+
+## 14. Course Progress
+
+Course progress represents how much of a course a student has completed.
+
+It may eventually include:
+
+* Modules completed.
+* Topics completed.
+* Assignments completed.
+* Assessments completed.
+* Skills achieved.
+* Overall completion percentage.
+
+For example:
+
+```text
+Mathematics Foundation
+
+Course Progress: 72%
+
+✓ Number Systems
+✓ Algebra
+✓ Linear Equations
+→ Geometry
+○ Statistics
+○ Probability
+```
+
+Progress belongs to the **student's learning relationship with the course**, rather than to the course itself.
+
+---
+
+## 15. Course Management by Organization
+
+The Organization Owner should be able to:
+
+* Create courses.
+* Edit course information.
+* Publish/unpublish courses.
+* Archive courses.
+* Manage course pricing.
+* Add learning content.
+* Create batches for the course.
+* View enrolled students.
+* View course-level reports.
+
+The owner should also be able to see whether a course is:
+
+* Not yet offered.
+* Currently active.
+* Full.
+* Temporarily unavailable.
+* Archived.
+
+---
+
+## 16. Course Management by Tutor
+
+Tutors should generally have limited course access.
+
+Depending on organization permissions, a tutor may be able to:
+
+* View course information.
+* Add learning materials.
+* Create assignments.
+* Update learning content.
+* Track student progress.
+
+They should not automatically be able to:
+
+* Delete courses.
+* Change organization-wide pricing.
+* Publish/unpublish courses.
+* Modify organization settings.
+* Access unrelated courses.
+
+---
+
+## 17. Course Visibility
+
+A course may have different visibility states:
+
+```text
+Draft
+  ↓
+Private
+  ↓
+Public
+  ↓
+Archived
+```
+
+### Draft
+
+Only organization staff can see it.
+
+### Private
+
+The course is available to selected students or through a direct link, but not general discovery.
+
+### Public
+
+The course appears in Tutorog discovery and the organization's public page.
+
+### Archived
+
+The course is no longer offered to new students but historical enrollments and learning records remain intact.
+
+The exact visibility model can be refined as the discovery system evolves.
+
+---
+
+## 18. Course Reports
+
+The Organization Owner should eventually be able to understand how each course performs.
+
+Useful metrics include:
+
+### Enrollment
+
+* Total enrollments.
+* Active students.
+* New enrollments.
+* Withdrawals.
+
+### Learning
+
+* Course completion.
+* Assignment completion.
+* Assessment performance.
+* Student progress.
+
+### Attendance
+
+* Average attendance.
+* Students with low attendance.
+
+### Financial
+
+* Course revenue.
+* Collected fees.
+* Outstanding fees.
+
+### Reputation
+
+* Course ratings.
+* Student/parent reviews.
+
+---
+
+## 19. Important Product Principles
+
+### 1. Course ≠ Batch
+
+A course defines the learning offering. A batch defines its scheduled delivery.
+
+### 2. Course ≠ Enrollment
+
+A course is an offering; an enrollment represents a particular student's participation in that offering.
+
+### 3. Course ≠ Payment
+
+Course pricing describes what an organization charges. Actual payments belong to the student's financial relationship with the organization.
+
+### 4. Course ≠ Student Progress
+
+The course defines the learning structure. Progress belongs to the individual student's learning journey.
+
+### 5. Course content should be reusable
+
+A course should ideally be reusable across multiple batches without duplicating the entire course structure.
+
+---
+
+## 20. Core Relationship
+
+The overall relationship can be understood as:
+
+```text
+Organization
+     │
+     │ offers
+     ▼
+   Course
+     │
+     │ delivered through
+     ▼
+   Batch
+     │
+     │ contains
+     ▼
+Enrollment
+     │
+     │ belongs to
+     ▼
+ Student
+```
+
+With tutors participating in the delivery:
+
+```text
+                 Organization
+                      │
+                      ▼
+                    Course
+                      │
+             ┌────────┴────────┐
+             ▼                 ▼
+           Batch             Batch
+             │                 │
+          Tutor             Tutor
+             │                 │
+             └────────┬────────┘
+                      ▼
+                  Students
+```
+
+This model keeps the product conceptually clean:
+
+> **Organizations offer Courses. Courses are delivered through Batches. Tutors teach Batches. Students enroll in Batches and progress through Courses.**
