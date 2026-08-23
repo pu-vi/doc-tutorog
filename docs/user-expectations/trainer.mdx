@@ -1,0 +1,576 @@
+---
+title: Tutor / Trainer / Mentor
+sidebar_position: 3
+---
+
+## 1. Role Overview
+
+The **Tutor / Trainer** is the person who directly delivers the learning or training experience to students.
+
+Depending on the organization, this person may be called a:
+
+* Tutor
+* Teacher
+* Trainer
+* Coach
+* Instructor
+* Mentor
+* Faculty member
+
+The Tutor/Trainer primarily interacts with **their assigned courses, batches, and students** rather than managing the entire organization.
+
+Their primary expectation is:
+
+> **"Tutorog should help me teach, manage my students, and understand their progress without creating extra administrative work."**
+
+---
+
+# 2. Primary Goals
+
+The Tutor/Trainer should be able to:
+
+1. See the batches and classes assigned to them.
+2. Quickly access their students.
+3. Take attendance.
+4. Share learning materials.
+5. Create and manage assignments.
+6. Track student progress.
+7. Provide feedback.
+8. Communicate with students and parents.
+9. Identify students who need additional attention.
+10. Spend more time teaching and less time managing administrative tasks.
+
+---
+
+# 3. Tutor / Trainer Journey
+
+The overall journey can be represented as:
+
+```text id="3g72vx"
+Join Organization
+        ↓
+View Assigned Courses / Batches
+        ↓
+View Students
+        ↓
+Prepare for Class
+        ↓
+Conduct Class
+        ↓
+Take Attendance
+        ↓
+Share Material / Assignment
+        ↓
+Track Student Progress
+        ↓
+Provide Feedback
+        ↓
+Communicate with Students / Parents
+        ↓
+Review Student Performance
+```
+
+The Tutor/Trainer's experience should be centered around **teaching and student outcomes**.
+
+---
+
+# 4. Tutor Onboarding
+
+## Expectation
+
+The tutor should not have to independently configure an entire organization.
+
+The Organization Owner or Administrator should typically:
+
+1. Invite the tutor.
+2. Tutor accepts the invitation.
+3. Tutor creates or connects their account.
+4. Tutor sees the organization they belong to.
+5. Assigned courses/batches become available.
+
+```text id="b3l0nq"
+Organization Owner
+        │
+        │ Invite
+        ▼
+Tutor
+        │
+        │ Accept
+        ▼
+Tutorog Account
+        │
+        ▼
+Organization
+        │
+        ▼
+Assigned Batches
+```
+
+The tutor should immediately understand:
+
+> **"Where am I teaching, which students do I have, and what do I need to do today?"**
+
+---
+
+# 5. See Assigned Batches
+
+## Expectation
+
+The tutor should have a focused view of only the batches they are responsible for.
+
+For each batch, they should be able to see:
+
+* Batch name
+* Course
+* Schedule
+* Location / online status
+* Number of students
+* Next class
+* Attendance status
+* Recent activity
+
+Example:
+
+```text id="z2q0tq"
+My Batches
+
+Mathematics — Class 10A
+Next class: Today, 5:00 PM
+Students: 24
+
+Physics — Class 11A
+Next class: Today, 6:30 PM
+Students: 18
+
+Physics — Class 11B
+Next class: Tomorrow, 5:00 PM
+Students: 21
+```
+
+The tutor should not be overwhelmed by batches belonging to other tutors.
+
+---
+
+# 6. View Students
+
+## Expectation
+
+The tutor should be able to quickly access students belonging to their assigned batches.
+
+A student list could provide:
+
+* Student name
+* Profile photo
+* Batch
+* Attendance
+* Recent progress
+* Pending assignments
+* Recent feedback
+* Important alerts
+
+Example:
+
+```text id="9j45pj"
+Batch: Mathematics — Class 10A
+
+Student          Attendance    Assignment
+──────────────────────────────────────────
+Aarav             92%           Complete
+Ananya             87%           Pending
+Rohan              68%           Pending
+Priya              95%           Complete
+```
+
+The tutor should be able to open a student's profile for more detailed information.
+
+---
+
+# 7. Student Profile
+
+The tutor's view of a student should be focused on **learning**, not sensitive account information.
+
+The tutor may see:
+
+### Basic Information
+
+* Student name
+* Profile picture
+* Batch
+* Enrollment information
+
+### Learning Information
+
+* Attendance
+* Assignments
+* Assessments
+* Progress
+* Feedback
+* Learning history
+
+### Communication
+
+* Relevant messages
+* Previous feedback
+* Parent communication where permitted
+
+The tutor should only see information that is necessary for their role.
+
+---
+
+# 8. Take Attendance
+
+## Expectation
+
+Attendance should be extremely fast.
+
+A typical flow:
+
+```text id="3l6mws"
+My Batches
+    ↓
+Today's Class
+    ↓
+Student List
+    ↓
+Mark Attendance
+    ↓
+Save
+```
+
+The tutor should be able to:
+
+* Mark present/absent.
+* Modify attendance when authorized.
+* Add an attendance note where appropriate.
+* See previous attendance.
+* Identify students with repeated absences.
+
+The system should avoid making attendance a complicated administrative process.
+
+---
+
+# 9. Share Learning Material
+
+## Expectation
+
+The tutor should be able to share materials directly with the students they teach.
+
+Materials could include:
+
+* Notes
+* PDFs
+* Worksheets
+* Images
+* Videos
+* Links
+* Reference documents
+* Study resources
+
+The tutor should be able to specify the audience:
+
+```text id="q6zjbh"
+Material
+   │
+   ├── Entire Batch
+   ├── Selected Students
+   └── Individual Student
+```
+
+Materials should ideally remain organized by course/batch so that students can easily find them later.
+
+---
+
+# 10. Give Assignments
+
+## Expectation
+
+The tutor should be able to create assignments for their students.
+
+An assignment may contain:
+
+* Title
+* Description/instructions
+* Due date
+* Attached material
+* Maximum marks, where applicable
+* Submission requirements
+
+Example:
+
+```text id="2j2bof"
+Assignment
+────────────────────────────
+Chapter 5 — Algebra
+
+Complete questions 1–20.
+
+Due: 28 August
+Marks: 20
+
+Attachment:
+Algebra Worksheet.pdf
+```
+
+Students should then be able to see the assignment from their own dashboard.
+
+Depending on the MVP scope, submission and grading can be introduced progressively.
+
+---
+
+# 11. Track Student Progress
+
+## Expectation
+
+The tutor should be able to understand how each student is progressing.
+
+Progress may include:
+
+* Course completion
+* Topic completion
+* Assignment performance
+* Assessment results
+* Attendance
+* Skill development
+* Tutor observations
+
+The tutor should be able to answer:
+
+> **"Which students are doing well, which students are falling behind, and why?"**
+
+A simple student progress view might be:
+
+```text id="k1as7m"
+Rohan Sharma
+
+Attendance       68%
+Assignments     5 / 8
+Assessments     72%
+Course Progress  60%
+
+⚠ Low attendance
+⚠ 2 assignments pending
+
+Tutor Note:
+Needs additional practice with algebra.
+```
+
+---
+
+# 12. Provide Feedback
+
+## Expectation
+
+Tutors should be able to record meaningful feedback about students.
+
+Feedback can be:
+
+* General
+* Assignment-specific
+* Assessment-specific
+* Topic-specific
+* Periodic progress feedback
+
+For example:
+
+> "Good understanding of fractions. Needs more practice with word problems."
+
+Feedback should become part of the student's learning history.
+
+Where appropriate, parents should also be able to see relevant feedback.
+
+---
+
+# 13. Communicate with Students
+
+## Expectation
+
+Tutors need a simple way to communicate with their students.
+
+Typical communication includes:
+
+* Class announcements
+* Assignment reminders
+* Learning guidance
+* Schedule changes
+* Individual feedback
+* Questions related to coursework
+
+Communication should respect the tutor's relationship with the student and the organization's policies.
+
+For example:
+
+```text id="n2f2ja"
+Tutor
+  │
+  ├── Entire Batch
+  ├── Selected Students
+  └── Individual Student
+```
+
+---
+
+# 14. Communicate with Parents
+
+For organizations working with children, parent communication is particularly important.
+
+The tutor may need to communicate:
+
+* Attendance concerns
+* Learning progress
+* Assignment issues
+* Performance observations
+* Important announcements
+* Suggestions for improvement
+
+The organization should control what communication channels are available and whether tutors can communicate directly with parents.
+
+The goal should be:
+
+> **Keep parents informed without creating unnecessary communication overhead for the tutor.**
+
+---
+
+# 15. Daily Tutor Experience
+
+A tutor's dashboard should be considerably simpler than the Organization Owner's dashboard.
+
+A typical day might look like:
+
+```text id="xk2i8e"
+Good Morning, Amit
+
+TODAY
+────────────────────────────
+
+5:00 PM
+Mathematics — Class 10A
+24 Students
+
+6:30 PM
+Physics — Class 11A
+18 Students
+
+────────────────────────────
+
+NEEDS ATTENTION
+
+• 3 students with low attendance
+• 5 assignments awaiting review
+• 2 student messages
+• 1 parent message
+
+────────────────────────────
+
+QUICK ACTIONS
+
+[ Take Attendance ]
+[ Add Material ]
+[ Create Assignment ]
+[ View Students ]
+```
+
+The tutor should be able to complete most daily tasks in a few interactions.
+
+---
+
+# 16. Tutor Workflow Around a Class
+
+A useful mental model for Tutorog is:
+
+```text id="3j6m4h"
+BEFORE CLASS
+     │
+     ├── View class
+     ├── Review students
+     └── Prepare material
+     │
+     ▼
+DURING CLASS
+     │
+     └── Teach
+     │
+     ▼
+AFTER CLASS
+     │
+     ├── Take attendance
+     ├── Share material
+     ├── Give assignment
+     └── Add notes
+     │
+     ▼
+ONGOING
+     │
+     ├── Review submissions
+     ├── Track progress
+     ├── Give feedback
+     └── Communicate
+```
+
+This workflow should guide the design of the tutor interface.
+
+---
+
+# 17. Tutor Permissions
+
+The tutor should have **limited organization access**.
+
+They should generally be able to:
+
+| Capability                   | Access                  |
+| ---------------------------- | ----------------------- |
+| View assigned batches        | Yes                     |
+| View assigned students       | Yes                     |
+| Take attendance              | Yes                     |
+| Share material               | Yes                     |
+| Create assignments           | Yes                     |
+| Track student progress       | Yes                     |
+| Provide feedback             | Yes                     |
+| Communicate with students    | Yes                     |
+| Communicate with parents     | Organization-controlled |
+| Create courses               | Usually No              |
+| Create batches               | Usually No              |
+| Manage organization settings | No                      |
+| Manage fees                  | Usually No              |
+| Manage other tutors          | No                      |
+| Manage organization staff    | No                      |
+
+These permissions can later become configurable by the Organization Owner.
+
+---
+
+# 18. What the Tutor / Trainer Should NOT Need to Do
+
+The tutor should not be burdened with organization-level administration.
+
+They should not normally need to:
+
+* Manage the organization profile.
+* Manage other tutors.
+* Manage courses.
+* Manage batch schedules.
+* Manage organization finances.
+* Approve student enrollments.
+* Handle platform-level reports.
+* Manage platform settings.
+
+Their primary responsibility is:
+
+> **Teach → Observe → Guide → Communicate → Improve student outcomes.**
+
+---
+
+# 19. Success Criteria
+
+The Tutor/Trainer should feel that Tutorog is:
+
+* **Simple** — daily tasks require minimal effort.
+* **Focused** — they see only what is relevant to their teaching.
+* **Student-centric** — important student information is easy to find.
+* **Helpful** — the system highlights students needing attention.
+* **Collaborative** — communication with students and parents is easy.
+* **Organized** — materials, assignments, attendance, and feedback stay together.
+* **Insightful** — progress information helps them teach better.
+
+## Core Principle
+
+> **The Tutor/Trainer should experience Tutorog as a teaching assistant—not as another administrative system they have to manage.**

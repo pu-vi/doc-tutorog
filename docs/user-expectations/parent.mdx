@@ -1,0 +1,617 @@
+---
+title: Parent / Guardian
+sidebar_position: 4
+---
+
+## 1. Role Overview
+
+The **Parent / Guardian** is a key user of Tutorog, particularly for children and younger students who may not manage their own accounts.
+
+A parent/guardian uses Tutorog to **discover learning opportunities, manage one or more children, handle enrollments and fees, and stay informed about their children's learning journey**.
+
+A parent may manage multiple Student profiles from a single User account.
+
+Their primary expectation is:
+
+> **"I should be able to manage my children's learning in one place and always know how they are doing."**
+
+---
+
+# 2. Primary Goals
+
+The Parent / Guardian should be able to:
+
+1. Manage one or more children.
+2. Maintain basic information for each child.
+3. Discover suitable organizations and courses.
+4. Evaluate organizations before enrolling.
+5. Enroll a child in a course or batch.
+6. See schedules and important class information.
+7. Track attendance.
+8. Understand learning progress.
+9. View fees and payment status.
+10. Receive important announcements.
+11. Communicate with the organization and tutors.
+12. Manage their children's learning without needing separate accounts for every child.
+
+---
+
+# 3. Parent / Guardian Journey
+
+The overall journey can be represented as:
+
+```text
+Create / Login to Account
+          ↓
+Add Child / Children
+          ↓
+Discover Organizations
+          ↓
+Explore Courses
+          ↓
+Compare / Evaluate
+          ↓
+Enroll Child
+          ↓
+Join Batch
+          ↓
+View Schedule
+          ↓
+Monitor Attendance & Progress
+          ↓
+Manage Fees
+          ↓
+Receive Announcements
+          ↓
+Communicate with Institute / Tutor
+          ↓
+Support Child's Learning
+```
+
+The parent experience should be centered around the **child**, not around the organization's internal structure.
+
+---
+
+# 4. Parent Account & Multiple Children
+
+## Expectation
+
+A parent should have **one User account** from which they can manage multiple children.
+
+For example:
+
+```text
+Parent Account
+      │
+      ├── Aarav
+      │    ├── Mathematics
+      │    └── Cricket
+      │
+      ├── Ananya
+      │    ├── Dance
+      │    └── English
+      │
+      └── Rohan
+           └── Coding
+```
+
+The parent should be able to switch between children easily.
+
+A prominent **child selector** should be available throughout the parent experience.
+
+For example:
+
+```text
+Viewing: [ Aarav ▼ ]
+```
+
+This prevents the parent from accidentally confusing one child's attendance, fees, schedule, or progress with another child's information.
+
+---
+
+# 5. Add & Manage Children
+
+## Expectation
+
+Adding a child should be simple.
+
+The parent may provide:
+
+* Student name
+* Date of birth
+* Profile photo
+* Basic information
+* Relevant learning information
+
+The parent should be able to:
+
+* Add another child.
+* Edit permitted information.
+* View each child's enrollments.
+* Manage the child's learning activities.
+
+The student profile should remain distinct from the parent's User account.
+
+---
+
+# 6. Discover Organizations
+
+## Expectation
+
+Parents should be able to discover organizations that may be suitable for their children.
+
+They may search by:
+
+* Category
+* Subject
+* Activity
+* Location
+* Course
+* Age/level
+* Organization name
+
+For example:
+
+```text
+What are you looking for?
+
+[ Mathematics          ]
+
+Near:
+[ Your location        ]
+
+Category:
+[ Academics ▼          ]
+```
+
+The discovery experience should make it easy to move from:
+
+**What does my child need?**
+
+to:
+
+**Who can provide it?**
+
+---
+
+# 7. Evaluate Organizations & Courses
+
+Before enrolling, parents should be able to understand an organization's offering.
+
+They may want to see:
+
+### Organization
+
+* About the organization
+* Location
+* Contact information
+* Tutors/trainers
+* Photos
+* Ratings
+* Reviews
+
+### Course
+
+* What is taught
+* Duration
+* Schedule
+* Fees
+* Eligibility
+* Available batches
+* Course materials or learning approach where available
+
+The parent should be able to make an informed decision without contacting the organization for every basic piece of information.
+
+---
+
+# 8. Enroll a Child
+
+## Expectation
+
+The parent should be able to select **which child** is being enrolled.
+
+Example:
+
+```text
+Course:
+Mathematics Foundation
+
+Child:
+[ Aarav ▼ ]
+
+Preferred Batch:
+[ Mon / Wed / Fri — 5:00 PM ]
+
+[ Request Enrollment ]
+```
+
+The enrollment may require organization approval.
+
+The parent should then be able to see the enrollment status:
+
+```text
+Pending → Approved → Active
+```
+
+If rejected or cancelled, the parent should receive an appropriate explanation where applicable.
+
+---
+
+# 9. View Child's Schedule
+
+## Expectation
+
+Parents should have a consolidated view of their children's schedules.
+
+For multiple children:
+
+```text
+TODAY
+
+Aarav
+5:00 PM — Mathematics
+Tutor: Amit
+
+Ananya
+6:00 PM — Dance
+Trainer: Neha
+
+Rohan
+7:00 PM — Coding
+Tutor: Rahul
+```
+
+The parent should be able to see:
+
+* Upcoming classes
+* Batch schedule
+* Location
+* Tutor/trainer
+* Schedule changes
+* Holidays
+* Cancelled classes
+
+The goal is to answer:
+
+> **"Where does my child need to be, and when?"**
+
+---
+
+# 10. Track Attendance
+
+## Expectation
+
+Parents should be able to see their child's attendance without needing to ask the institute.
+
+For example:
+
+```text
+Aarav — Mathematics
+
+Attendance
+────────────────────
+Present       22
+Absent         3
+Attendance    88%
+
+⚠ Attendance has dropped below the recommended level.
+```
+
+The parent should be able to:
+
+* View recent attendance.
+* View attendance history.
+* See attendance percentage.
+* Receive alerts for repeated absences where enabled.
+
+Attendance should be presented as a **useful signal**, rather than simply a list of present/absent records.
+
+---
+
+# 11. Track Learning Progress
+
+## Expectation
+
+Parents want to know more than whether their child attends classes.
+
+They want to understand:
+
+> **"Is my child actually learning and progressing?"**
+
+The parent should eventually be able to see:
+
+* Course progress
+* Topics completed
+* Assignment completion
+* Assessment performance
+* Tutor feedback
+* Areas requiring improvement
+* Milestones or achievements
+
+Example:
+
+```text
+Aarav — Mathematics
+
+Course Progress       72%
+Assignments           8 / 10
+Recent Assessment     82%
+Attendance             88%
+
+Tutor Feedback
+"Good progress in algebra.
+Needs additional practice
+with geometry."
+```
+
+The information should be understandable to a parent without requiring knowledge of the organization's internal systems.
+
+---
+
+# 12. View Fees & Payment Status
+
+## Expectation
+
+Parents should have a clear view of what they owe and what has already been paid.
+
+For each child:
+
+```text
+Aarav
+Mathematics Foundation
+
+Total Fee        ₹12,000
+Paid              ₹8,000
+Outstanding       ₹4,000
+Next Due Date     10 Sep
+```
+
+The parent should be able to:
+
+* View current fees.
+* View payment history.
+* See outstanding amounts.
+* View receipts.
+* Receive payment reminders.
+* Make online payments when supported.
+
+For multiple children, fees should remain clearly separated.
+
+---
+
+# 13. Receive Announcements
+
+## Expectation
+
+Parents should receive important information without having to constantly check with the institute.
+
+Announcements may include:
+
+* Class cancellations
+* Schedule changes
+* Holidays
+* Exam dates
+* Events
+* Fee reminders
+* Important notices
+* Course announcements
+
+Announcements may be targeted at:
+
+```text
+Organization
+     │
+     ├── All Parents
+     ├── Specific Course
+     ├── Specific Batch
+     └── Specific Student
+```
+
+The parent should be able to distinguish between:
+
+**Important action required**
+
+and
+
+**General information**.
+
+---
+
+# 14. Communicate with Institute & Tutors
+
+## Expectation
+
+Parents should have an appropriate communication channel for discussing their child's learning.
+
+Common reasons include:
+
+* Attendance concerns
+* Academic progress
+* Assignment questions
+* Schedule issues
+* Fee questions
+* General feedback
+* Child-specific concerns
+
+The communication experience should preserve the organization's policies and appropriate boundaries.
+
+For example:
+
+```text
+Parent
+  │
+  ├── Organization
+  │
+  └── Tutor / Trainer
+```
+
+Whether a parent can directly message a tutor should be configurable by the organization.
+
+---
+
+# 15. Parent Dashboard
+
+The parent dashboard should be **child-centric and action-oriented**.
+
+A possible structure:
+
+```text
+Good Morning, Pooja
+
+[ Aarav ▼ ]
+
+TODAY
+────────────────────────────
+
+5:00 PM
+Mathematics
+Class 10A
+
+────────────────────────────
+
+CHILD'S PROGRESS
+
+Attendance       88%
+Course Progress  72%
+Assignments      8 / 10
+
+────────────────────────────
+
+NEEDS ATTENTION
+
+⚠ ₹4,000 fee due
+⚠ Mathematics assignment pending
+
+────────────────────────────
+
+RECENT
+
+• New announcement from institute
+• Tutor feedback received
+```
+
+If the parent has multiple children, the dashboard could provide both:
+
+**Selected Child View**
+
+and
+
+**Family Overview**.
+
+---
+
+# 16. Family Overview
+
+For parents managing multiple children, Tutorog should provide a consolidated view.
+
+```text
+MY CHILDREN
+
+Aarav
+────────────────────────
+3 active courses
+Attendance: 88%
+1 pending assignment
+
+Ananya
+────────────────────────
+2 active courses
+Attendance: 94%
+No pending assignments
+
+Rohan
+────────────────────────
+1 active course
+Attendance: 76%
+⚠ Needs attention
+```
+
+This allows the parent to quickly identify where attention is needed.
+
+---
+
+# 17. Parent's Role in the Learning Journey
+
+The parent should not become the teacher or institute administrator.
+
+Their role is primarily:
+
+```text
+DISCOVER
+   ↓
+CHOOSE
+   ↓
+ENROLL
+   ↓
+SUPPORT
+   ↓
+MONITOR
+   ↓
+COMMUNICATE
+```
+
+Tutorog should provide enough information for the parent to support their child without exposing unnecessary operational complexity.
+
+---
+
+# 18. What the Parent Should NOT Need to Do
+
+Parents should not need to:
+
+* Manage organization settings.
+* Create courses.
+* Manage batches.
+* Manage tutors.
+* Take attendance.
+* Enter student progress.
+* Manage other students.
+* Handle organization-level fees.
+* Understand Tutorog's internal organization structure.
+
+Their mental model should be:
+
+> **My account → My children → Their learning**
+
+rather than:
+
+> **My account → Organizations → Courses → Batches → Enrollments → ...**
+
+Tutorog should handle that complexity behind the scenes.
+
+---
+
+# 19. Privacy & Access Expectations
+
+Because a parent may manage multiple children, access control is particularly important.
+
+A parent should only be able to access:
+
+* Their own account.
+* Student profiles they are authorized to manage.
+* Courses/batches in which their children are enrolled.
+* Relevant attendance.
+* Relevant learning progress.
+* Relevant fees and payments.
+* Relevant communication.
+
+A parent should **not automatically have access to another student's information**, even if that student attends the same organization.
+
+This distinction should be reflected in both the product experience and the underlying authorization model.
+
+---
+
+# 20. Success Criteria
+
+The Parent / Guardian should feel that Tutorog is:
+
+* **Convenient** — one account can manage multiple children.
+* **Informative** — they know what is happening with their children.
+* **Transparent** — fees, attendance, and progress are easy to understand.
+* **Trustworthy** — information comes from the child's actual learning environment.
+* **Connected** — communication with the organization is straightforward.
+* **Child-focused** — the experience revolves around the child's learning journey.
+* **Actionable** — the system tells them when something needs attention.
+
+## Core Principle
+
+> **The Parent / Guardian should use Tutorog as a window into their child's learning journey—not as a replacement for the tutor or the organization.**

@@ -56,21 +56,16 @@ const config: Config = {
     },
 
     navbar: {
-      title: 'Tutorog',
+      title: 'TutorOG',
       logo: {
-        alt: 'Tutorog Logo',
-        src: 'img/logo.svg',
+        alt: 'TutorOG Logo',
+        src: 'img/logo.png',
       },
 
       items: [
         {
-          href: 'https://tutorog.com',
-          label: 'Tutorog',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/tutorog/tutorog',
-          label: 'GitHub',
+          href: 'https://puza.click',
+          label: 'TutorOG Staging',
           position: 'right',
         },
       ],
@@ -83,7 +78,7 @@ const config: Config = {
         {
           items: [
             {
-              label: 'Tutorog Staging',
+              label: 'TutorOG Staging',
               href: 'https://puza.click',
             }
           ]
@@ -103,16 +98,6 @@ const config: Config = {
         //   ],
         // },
 
-        {
-          // title: 'Tutorog',
-          items: [
-
-            {
-              label: 'GitHub',
-              href: 'https://github.com/tutorog/tutorog',
-            },
-          ],
-        },
       ],
 
       copyright: `Copyright © ${new Date().getFullYear()} Tutorog. All rights reserved.`,

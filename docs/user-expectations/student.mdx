@@ -1,0 +1,636 @@
+---
+title: Student / Learner
+sidebar_position: 5
+---
+
+## 1. Role Overview
+
+The **Student** is the primary learner within Tutorog.
+
+A Student is different from a User account. A student may be:
+
+* A child whose account is managed by a parent/guardian.
+* A teenager with their own login.
+* An adult learner who manages their own account.
+* A learner associated with an organization but not responsible for managing the organization.
+
+This distinction allows Tutorog to support situations where **one User account manages multiple Students**, while each Student maintains an independent learning profile.
+
+The Student's primary expectation is:
+
+> **"Tutorog should help me know what I need to learn, what I need to do, and how I am progressing."**
+
+---
+
+# 2. Primary Goals
+
+The Student should be able to:
+
+1. Have a personal learning profile.
+2. See their active courses and batches.
+3. Know when and where their classes take place.
+4. Access learning materials.
+5. Complete and submit assignments.
+6. See their attendance.
+7. Understand their learning progress.
+8. Read tutor/trainer feedback.
+9. Receive important notifications.
+10. Eventually discover and participate in the broader Tutorog learning community.
+
+---
+
+# 3. Student Journey
+
+The overall journey can be represented as:
+
+```text id="4j8f8x"
+Student Profile
+      ↓
+Enrolled Courses / Batches
+      ↓
+View Schedule
+      ↓
+Attend Class
+      ↓
+Access Learning Material
+      ↓
+Complete Assignments
+      ↓
+Receive Feedback
+      ↓
+Track Progress
+      ↓
+Improve Learning
+      ↓
+Participate in Tutorog Community
+```
+
+The student's experience should revolve around the **learning cycle**:
+
+> **Learn → Practice → Submit → Receive Feedback → Improve**
+
+---
+
+# 4. Student Profile
+
+## Expectation
+
+Every student should have their own learning profile regardless of who manages their account.
+
+The profile may contain:
+
+* Name
+* Profile photo
+* Basic information
+* Learning interests
+* Enrolled organizations
+* Courses
+* Batches
+* Learning history
+* Achievements
+* Progress
+
+The profile should represent the student's **learning identity**, rather than simply being another copy of their parent's account.
+
+---
+
+# 5. User Account vs Student Profile
+
+This is an important concept in Tutorog.
+
+A Student may or may not have their own login.
+
+### Parent-managed Student
+
+```text id="3x5e2d"
+Parent User Account
+        │
+        ├── Student: Aarav
+        ├── Student: Ananya
+        └── Student: Rohan
+```
+
+### Self-managed Student
+
+```text id="yknl0h"
+Student User Account
+        │
+        └── Student Profile
+```
+
+Both should ultimately lead to the same Student learning experience.
+
+The authentication mechanism should therefore remain separate from the **Student entity**.
+
+---
+
+# 6. See Enrolled Courses & Batches
+
+## Expectation
+
+The student should immediately see what they are currently learning.
+
+For example:
+
+```text id="r7q0hw"
+MY LEARNING
+
+Mathematics Foundation
+Batch: Class 10A
+Tutor: Amit
+Progress: 72%
+
+Physics
+Batch: Class 11A
+Tutor: Neha
+Progress: 58%
+
+Cricket
+Batch: Juniors
+Coach: Rahul
+Progress: Active
+```
+
+The student should be able to open a course and access everything relevant to that learning experience.
+
+---
+
+# 7. View Schedule
+
+## Expectation
+
+Students should always know:
+
+> **What class do I have next?**
+
+The schedule should show:
+
+* Date
+* Time
+* Course
+* Batch
+* Tutor/trainer
+* Location or online meeting information
+* Schedule changes
+* Cancellations
+
+A simple view might be:
+
+```text id="6e4rqi"
+TODAY
+
+5:00 PM
+Mathematics
+Class 10A
+Room 204
+
+7:00 PM
+Physics
+Class 11A
+Room 301
+```
+
+The student should also be able to see upcoming classes.
+
+---
+
+# 8. Access Learning Material
+
+## Expectation
+
+Students should have a central place for learning resources shared by their organization or tutor.
+
+Materials could include:
+
+* Notes
+* PDFs
+* Worksheets
+* Videos
+* Links
+* Presentations
+* Reference material
+* Assignments
+
+The experience should be organized around the student's courses:
+
+```text id="4l6qgk"
+Mathematics
+│
+├── Chapter 1
+│   ├── Notes
+│   └── Worksheet
+│
+├── Chapter 2
+│   ├── Notes
+│   └── Video
+│
+└── Assignments
+```
+
+Students should not have to search through chat messages to find important learning resources.
+
+---
+
+# 9. Submit Assignments
+
+## Expectation
+
+Students should be able to see pending assignments and submit their work.
+
+A typical workflow:
+
+```text id="s98cgw"
+Assignment Received
+       ↓
+Read Instructions
+       ↓
+Complete Work
+       ↓
+Upload / Submit
+       ↓
+Submission Recorded
+       ↓
+Tutor Reviews
+       ↓
+Feedback Received
+```
+
+Depending on the type of assignment, submissions may include:
+
+* Text
+* Documents
+* Images
+* PDFs
+* Other supported files
+
+The student should always know:
+
+* What is pending.
+* When it is due.
+* Whether it has been submitted.
+* Whether it has been reviewed.
+
+---
+
+# 10. Assignment Dashboard
+
+A simple assignment view could be:
+
+```text id="d5i6uj"
+MY ASSIGNMENTS
+
+Pending
+────────────────────────
+Algebra Worksheet
+Due: 28 Aug
+[ Submit ]
+
+Submitted
+────────────────────────
+Physics — Motion
+Submitted: 24 Aug
+Status: Under Review
+
+Reviewed
+────────────────────────
+Chemistry — Atoms
+Score: 18 / 20
+Feedback available
+```
+
+This gives students a clear sense of what requires action.
+
+---
+
+# 11. See Attendance
+
+## Expectation
+
+Students should be able to see their own attendance.
+
+For example:
+
+```text id="xv8b8h"
+MATHEMATICS
+
+Present       22
+Absent         3
+Attendance    88%
+```
+
+They should be able to view attendance by:
+
+* Course
+* Batch
+* Date
+* Month or period
+
+Where appropriate, Tutorog can also highlight attendance concerns.
+
+For example:
+
+> **Your attendance is below the recommended level.**
+
+The system should avoid presenting attendance purely as a number; it should help students understand its significance.
+
+---
+
+# 12. See Progress
+
+## Expectation
+
+Students should understand how far they have progressed.
+
+Progress may be represented through:
+
+* Course completion
+* Topics completed
+* Assignments
+* Assessments
+* Skills
+* Milestones
+* Achievements
+
+Example:
+
+```text id="8j7tq1"
+MATHEMATICS
+
+Course Progress
+████████████░░░ 72%
+
+Completed
+✓ Number Systems
+✓ Algebra
+✓ Linear Equations
+
+Current
+→ Geometry
+
+Upcoming
+○ Statistics
+○ Probability
+```
+
+The presentation should be age-appropriate and easy to understand.
+
+---
+
+# 13. Receive Tutor Feedback
+
+## Expectation
+
+Students should be able to see feedback provided by their tutors/trainers.
+
+Feedback might include:
+
+* Assignment feedback
+* Assessment feedback
+* General learning feedback
+* Areas for improvement
+* Encouragement
+* Achievement recognition
+
+Example:
+
+```text id="w3k1z7"
+Feedback from Amit
+
+"Excellent improvement in algebra.
+Your problem-solving approach is
+getting much stronger.
+
+Next, focus on geometry."
+```
+
+Feedback should become part of the student's learning history rather than disappearing into a chat conversation.
+
+---
+
+# 14. Student Learning History
+
+Over time, Tutorog should become a record of the student's learning journey.
+
+A student may eventually be able to see:
+
+```text id="j1i4k2"
+MY LEARNING JOURNEY
+
+2026
+│
+├── Mathematics
+│   ├── Foundation
+│   └── Advanced
+│
+├── Cricket
+│   └── Junior Training
+│
+└── Coding
+    └── Python Basics
+```
+
+This becomes particularly valuable as the student moves between organizations and courses.
+
+The Student profile should therefore be **long-lived**, rather than being tied to a single organization.
+
+---
+
+# 15. Notifications
+
+## Expectation
+
+Students should receive notifications that are relevant to their learning.
+
+Examples:
+
+* New assignment
+* Assignment due soon
+* Assignment feedback
+* New learning material
+* Class reminder
+* Schedule change
+* Class cancellation
+* Tutor announcement
+* Course announcement
+* Achievement
+* Important organization notice
+
+Notifications should be prioritized so that students are not overwhelmed.
+
+For example:
+
+```text id="n6t3pz"
+TODAY
+
+🔔 Assignment due tomorrow
+📚 New Mathematics worksheet
+📅 Physics class moved to 6 PM
+💬 New feedback from your tutor
+```
+
+---
+
+# 16. Student Dashboard
+
+The student's dashboard should answer three questions:
+
+### What do I need to do today?
+
+### How am I doing?
+
+### What's happening next?
+
+Example:
+
+```text id="v4q8hj"
+Good Morning, Aarav 👋
+
+TODAY
+────────────────────────────
+5:00 PM
+Mathematics
+Class 10A
+
+────────────────────────────
+TO DO
+
+• Algebra Assignment
+  Due tomorrow
+
+• Review Physics notes
+
+────────────────────────────
+MY PROGRESS
+
+Mathematics      72%
+Physics          58%
+
+────────────────────────────
+RECENT FEEDBACK
+
+"Great improvement in algebra!"
+— Amit
+```
+
+The student dashboard should be **action-oriented rather than administrative**.
+
+---
+
+# 17. Age-Appropriate Experience
+
+Tutorog may serve very different types of students.
+
+A 7-year-old child and a 25-year-old learner should not necessarily experience the same interface.
+
+The platform may eventually support different experiences based on:
+
+* Age
+* Learning level
+* Organization type
+* Parent-managed vs self-managed account
+
+For younger students, the interface can be:
+
+* More visual.
+* Simpler.
+* More guided.
+* More achievement-oriented.
+
+For older students, it can provide:
+
+* More detailed progress.
+* More independent learning tools.
+* More direct communication.
+* Greater control over their profile.
+
+The underlying Student model can remain the same while the experience evolves.
+
+---
+
+# 18. Parent-Managed Students
+
+When a parent manages a student's account, Tutorog should still preserve the student's own learning identity.
+
+For example:
+
+```text id="z8gk5k"
+Parent
+  │
+  └── Aarav
+       │
+       ├── Courses
+       ├── Batches
+       ├── Attendance
+       ├── Assignments
+       ├── Progress
+       └── Feedback
+```
+
+The parent manages the account and has appropriate visibility, but the learning records belong to **Aarav's Student profile**.
+
+This separation is important for the long-term product.
+
+---
+
+# 19. Future Tutorog Community
+
+The broader Tutorog community should eventually allow students to participate beyond their individual organizations.
+
+Potential future experiences include:
+
+* Discovering new learning opportunities.
+* Following subjects or interests.
+* Participating in educational activities.
+* Challenges and quizzes.
+* Sharing achievements.
+* Learning resources.
+* Peer learning.
+* Events and competitions.
+* Student communities.
+
+However, this should be introduced carefully, especially for younger students.
+
+The initial Tutorog experience should remain focused on:
+
+> **The student's actual learning journey.**
+
+Community features can then grow around that foundation.
+
+---
+
+# 20. What the Student Should NOT Need to Do
+
+Students should not normally need to:
+
+* Manage organization settings.
+* Manage courses.
+* Manage batches.
+* Manage tutors.
+* Manage fees.
+* Manage other students.
+* Configure platform settings.
+* Handle enrollment administration unless permitted.
+* Understand the organization's internal structure.
+
+Their mental model should be:
+
+> **My Learning → My Classes → My Work → My Progress**
+
+---
+
+# 21. Success Criteria
+
+The Student should feel that Tutorog is:
+
+* **Clear** — I know what I need to do.
+* **Personal** — my learning profile belongs to me.
+* **Motivating** — I can see my progress.
+* **Useful** — my materials and assignments are easy to find.
+* **Connected** — I can receive feedback and communicate appropriately.
+* **Independent** — I can manage more of my learning as I grow.
+* **Encouraging** — progress and achievements are visible.
+* **Safe** — I only see information and communication appropriate for me.
+
+## Core Principle
+
+> **The Student should experience Tutorog as their personal learning companion—connecting their classes, work, feedback, progress, and future learning opportunities in one place.**
