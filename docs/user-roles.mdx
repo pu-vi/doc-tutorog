@@ -1,0 +1,159 @@
+---
+title: User Roles
+sidebar_position: 2
+---
+
+# User Roles
+
+Tutorog is a multi-sided learning platform where different users interact with the platform according to their responsibilities. Each role has a distinct purpose and access level.
+
+The core principle is:
+
+> **Users manage their responsibilities, while Tutorog connects the different participants in the learning ecosystem.**
+
+## 1. [Platform Administrator](/user-expectations/platform-admin)
+
+Manages the **Tutorog platform itself**.
+
+Key responsibilities:
+
+* Manage organizations and platform users.
+* Manage categories and subjects.
+* Moderate content.
+* Handle reports and disputes.
+* Monitor platform activity and health.
+* Manage platform-level policies and settings.
+
+**Scope:** Entire Tutorog platform.
+
+---
+
+## 2. [Organization / Institute Owner](/user-expectations/org-owner)
+
+Manages an **individual organization** and its day-to-day operations.
+
+Key responsibilities:
+
+* Create and manage the organization's public profile.
+* Manage tutors/trainers.
+* Create courses and batches.
+* Manage student enrollments.
+* Track attendance and fees.
+* Share learning materials.
+* Communicate with students and parents.
+* View organization reports.
+* Manage the organization's reputation.
+
+**Scope:** Their organization and its associated data.
+
+---
+
+## 3. [Tutor / Trainer](/user-expectations/trainer)
+
+Delivers learning or training to students within an organization.
+
+Key responsibilities:
+
+* View assigned courses and batches.
+* View assigned students.
+* Take attendance.
+* Share learning material.
+* Create assignments.
+* Track student progress.
+* Provide feedback.
+* Communicate with students and parents where permitted.
+
+**Scope:** Assigned courses, batches, and students.
+
+---
+
+## 4. [Parent / Guardian](/user-expectations/parent)
+
+Uses Tutorog to manage and support one or more children.
+
+Key responsibilities:
+
+* Manage one or more Student profiles.
+* Discover organizations and courses.
+* Enroll children.
+* View schedules.
+* Track attendance and progress.
+* View fees and payment status.
+* Receive announcements.
+* Communicate with organizations and tutors.
+
+**Scope:** Their own account and the Student profiles they are authorized to manage.
+
+---
+
+## 5. [Student](/user-expectations/student)
+
+Is the **learner** within Tutorog.
+
+Key responsibilities:
+
+* Maintain their learning profile.
+* View enrolled courses and batches.
+* View schedules.
+* Access learning material.
+* Submit assignments.
+* View attendance.
+* Track progress and feedback.
+* Receive notifications.
+* Eventually participate in the broader Tutorog community.
+
+**Scope:** Their own learning data and enrolled learning activities.
+
+---
+
+## 6. [Visitor / Prospective Student](/user-expectations/guest)
+
+A person exploring Tutorog who has not yet enrolled in an organization.
+
+Key activities:
+
+* Discover organizations.
+* Browse courses.
+* Compare options.
+* View organization profiles.
+* Read reviews and ratings.
+* Contact organizations.
+* Request or begin enrollment.
+
+**Scope:** Publicly available Tutorog information.
+
+---
+
+## Role Relationship
+
+The roles work together as an ecosystem:
+
+```text
+                    TUTOROG
+                       │
+              Platform Administrator
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+  Organizations                 Discovery
+        │                             │
+ Organization Owner          Visitor / Prospective
+        │
+   ┌────┴────┐
+   │         │
+Tutors    Students
+   │         │
+   │      Parent / Guardian
+   │         │
+   └────┬────┘
+        │
+   Learning Experience
+```
+
+### Important distinction
+
+A **User account** represents authentication and access to Tutorog, while a **role** determines what that user is allowed to do.
+
+A user may also have relationships with multiple entities. For example, a parent can manage multiple Student profiles, while a tutor can work with multiple batches within an organization.
+
+This separation allows Tutorog to support different account and relationship models without making the Student, Parent, Tutor, or Organization Owner the same underlying entity.

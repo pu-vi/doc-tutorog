@@ -1,0 +1,693 @@
+---
+title: Batches & Scheduling
+sidebar_position: 2
+---
+
+## 1. Overview
+
+A **Batch** represents a specific group of students taking a Course together at a particular time, under one or more tutors/trainers.
+
+While a Course defines **what is being taught**, a Batch defines **how and when that course is delivered to a particular group of students**.
+
+For example:
+
+> **Course:** Mathematics Foundation
+> **Batch:** Class 10 — Evening
+> **Schedule:** Mon/Wed/Fri, 5:00 PM
+> **Tutor:** Amit
+> **Students:** 24
+
+A course can have multiple batches operating at the same time.
+
+---
+
+## 2. Purpose of Batches
+
+Batches provide the operational structure required to actually deliver a course.
+
+A batch brings together:
+
+* A Course
+* Students
+* Tutor(s)
+* Schedule
+* Location or delivery mode
+* Capacity
+* Attendance
+* Class sessions
+* Batch-specific learning activity
+
+The batch is therefore the primary operational unit for **running classes**.
+
+---
+
+## 3. Course vs Batch
+
+This is one of the most important concepts in Tutorog.
+
+### Course
+
+Answers:
+
+> **What are we teaching?**
+
+### Batch
+
+Answers:
+
+> **When, where, by whom, and to which group are we teaching it?**
+
+Example:
+
+```text
+Course
+Mathematics Foundation
+│
+├── Batch A
+│   ├── Mon/Wed/Fri — 5 PM
+│   ├── Room 101
+│   ├── Tutor: Amit
+│   └── 24 students
+│
+├── Batch B
+│   ├── Tue/Thu/Sat — 6 PM
+│   ├── Room 102
+│   ├── Tutor: Neha
+│   └── 20 students
+│
+└── Batch C
+    ├── Saturday/Sunday — 10 AM
+    ├── Online
+    ├── Tutor: Rahul
+    └── 15 students
+```
+
+The course content can remain common while each batch has its own schedule, tutor, students, and delivery context.
+
+---
+
+## 4. Batch Lifecycle
+
+A batch typically follows:
+
+```text
+Draft
+  ↓
+Scheduled
+  ↓
+Active
+  ↓
+Completed
+  ↓
+Archived
+```
+
+### Draft
+
+The organization is preparing the batch.
+
+### Scheduled
+
+The batch has been configured and is planned to start.
+
+### Active
+
+Classes are currently being conducted and students can participate.
+
+### Completed
+
+The batch has finished.
+
+### Archived
+
+The batch is retained for historical records but is no longer operational.
+
+A batch should not normally be deleted after students have enrolled because it may contain important historical records such as attendance, assignments, and progress.
+
+---
+
+## 5. Batch Information
+
+A batch should contain information such as:
+
+### Basic Information
+
+* Batch name
+* Course
+* Organization
+* Description
+* Status
+
+### Schedule
+
+* Start date
+* End date
+* Days of week
+* Start time
+* End time
+* Time zone
+
+### Delivery
+
+* Physical location
+* Room/classroom
+* Online/offline/hybrid
+* Online meeting information where applicable
+
+### People
+
+* Assigned tutor(s)
+* Enrolled students
+* Maximum capacity
+
+### Operational Information
+
+* Attendance
+* Class sessions
+* Learning materials
+* Assignments
+* Announcements
+
+---
+
+## 6. Creating a Batch
+
+The Organization Owner should be able to create a batch from an existing course.
+
+Typical workflow:
+
+```text
+Course
+  ↓
+Create Batch
+  ↓
+Enter Batch Details
+  ↓
+Assign Tutor
+  ↓
+Set Schedule
+  ↓
+Set Capacity
+  ↓
+Set Location
+  ↓
+Publish / Schedule
+```
+
+The system should make it easy to create another batch using an existing course without having to recreate the course information.
+
+---
+
+## 7. Batch Scheduling
+
+Scheduling is one of the primary responsibilities of a batch.
+
+A batch may meet:
+
+* Every weekday.
+* Selected weekdays.
+* Weekends.
+* Once a week.
+* Multiple times per week.
+* According to a custom schedule.
+
+Example:
+
+```text
+Mathematics — Batch A
+
+Monday       5:00–6:00 PM
+Wednesday    5:00–6:00 PM
+Friday       5:00–6:00 PM
+
+Start: 1 Sep
+End: 28 Feb
+```
+
+The schedule should generate individual **class sessions** that can be used for attendance and class-specific activity.
+
+---
+
+## 8. Batch vs Class Session
+
+A Batch is a recurring group/program.
+
+A **Class Session** is a specific occurrence of that batch.
+
+For example:
+
+```text
+Batch
+Mathematics — Class 10A
+        │
+        ├── Class Session — 1 Sep
+        ├── Class Session — 3 Sep
+        ├── Class Session — 5 Sep
+        ├── Class Session — 8 Sep
+        └── ...
+```
+
+This distinction is important.
+
+The Batch stores the **overall structure**, while each Class Session represents an actual class that happened or is scheduled to happen.
+
+Attendance should generally belong to the **Class Session**, not directly to the Batch.
+
+---
+
+## 9. Tutors & Trainers
+
+A batch should have one or more assigned tutors/trainers.
+
+For example:
+
+```text
+Mathematics — Batch A
+│
+├── Primary Tutor: Amit
+└── Assistant Tutor: Neha
+```
+
+The organization should be able to:
+
+* Assign tutors.
+* Remove tutors.
+* Change tutors.
+* Assign multiple tutors where needed.
+
+Tutor access should be limited to the batches they are assigned to.
+
+---
+
+## 10. Students & Enrollment
+
+Students participate in a batch through an **Enrollment**.
+
+```text
+Batch
+  │
+  ├── Enrollment → Student A
+  ├── Enrollment → Student B
+  ├── Enrollment → Student C
+  └── Enrollment → Student D
+```
+
+This is preferable to directly attaching students to a batch because an Enrollment can contain information such as:
+
+* Enrollment date
+* Enrollment status
+* Fee arrangement
+* Start date
+* End date
+* Withdrawal date
+* Enrollment history
+
+A student may also have multiple enrollments across different batches.
+
+---
+
+## 11. Batch Capacity
+
+Organizations may want to limit the number of students in a batch.
+
+For example:
+
+```text
+Batch Capacity: 25
+
+Current Enrollment: 23
+
+Available Seats: 2
+```
+
+The system should be able to prevent or warn against exceeding the configured capacity.
+
+Capacity may be:
+
+* Fixed.
+* Unlimited.
+* Organization-controlled.
+
+This becomes particularly important for physical classes.
+
+---
+
+## 12. Batch Attendance
+
+Attendance is primarily recorded at the **Class Session** level.
+
+Example:
+
+```text
+Batch: Mathematics A
+Class: 25 Aug
+
+Aarav       Present
+Ananya      Present
+Rohan       Absent
+Priya       Present
+```
+
+From these individual sessions, Tutorog can calculate:
+
+* Student attendance percentage.
+* Batch attendance.
+* Attendance trends.
+* Absence history.
+
+This allows both tutors and organization owners to monitor participation.
+
+---
+
+## 13. Batch Learning Activities
+
+A batch provides the context for day-to-day teaching.
+
+Activities may include:
+
+* Class sessions.
+* Learning materials.
+* Assignments.
+* Assessments.
+* Announcements.
+* Attendance.
+* Tutor notes.
+* Student feedback.
+
+For example:
+
+```text
+Batch
+│
+├── Class Sessions
+├── Materials
+├── Assignments
+├── Assessments
+├── Announcements
+└── Students
+```
+
+Some of these resources may originate from the Course and then be made available to the Batch.
+
+---
+
+## 14. Batch-Specific Content
+
+Although courses can contain reusable learning material, tutors often need to provide material specific to a particular batch.
+
+For example:
+
+> "Today's class covered Chapter 4, pages 32–45."
+
+This content belongs naturally to the batch/class context.
+
+Therefore Tutorog should distinguish between:
+
+**Course-level content**
+
+> Reusable learning resources.
+
+and
+
+**Batch/Class-level content**
+
+> Content or activity specific to a particular group or class.
+
+---
+
+## 15. Batch Communication
+
+The batch should act as a natural communication boundary.
+
+The organization or tutor may send announcements to:
+
+* Entire batch.
+* Selected students.
+* Parents of students in the batch.
+
+Examples:
+
+* "Tomorrow's class is cancelled."
+* "Bring your geometry box."
+* "Assignment due Friday."
+* "Classroom changed to Room 204."
+
+This avoids sending irrelevant organization-wide notifications to students.
+
+---
+
+## 16. Batch Schedule Changes
+
+Schedules can change after a batch has started.
+
+Tutorog should support:
+
+* Cancelled classes.
+* Rescheduled classes.
+* Substitute tutors.
+* Room changes.
+* Online/offline changes.
+* Special sessions.
+
+For example:
+
+```text
+Original:
+Wednesday — 5:00 PM
+
+Changed:
+Thursday — 5:30 PM
+
+Reason:
+Teacher unavailable
+```
+
+Affected students and parents should receive appropriate notifications.
+
+The original schedule should not be silently overwritten if doing so would destroy the historical record.
+
+---
+
+## 17. Batch Completion
+
+When a batch finishes:
+
+```text
+Active
+  ↓
+End Date Reached
+  ↓
+Completed
+  ↓
+Historical Records Retained
+```
+
+Historical information should remain accessible, including:
+
+* Students.
+* Enrollment history.
+* Attendance.
+* Assignments.
+* Assessments.
+* Progress.
+* Tutor information.
+* Class sessions.
+
+Students should be able to retain the completed course in their learning history.
+
+---
+
+## 18. Batch Management by Organization Owner
+
+The Organization Owner should be able to:
+
+* Create batches.
+* Edit batch information.
+* Assign tutors.
+* Set schedules.
+* Set capacity.
+* Add/remove students where authorized.
+* View attendance.
+* View batch performance.
+* Publish/cancel batches.
+* Complete/archive batches.
+
+The owner should be able to see all batches within their organization.
+
+---
+
+## 19. Batch Management by Tutor
+
+A tutor should generally be able to:
+
+* View assigned batches.
+* View enrolled students.
+* View upcoming classes.
+* Take attendance.
+* Share material.
+* Create assignments.
+* Record feedback.
+* Track student progress.
+* Communicate with the batch.
+
+A tutor should not automatically be able to modify organization-level batch configuration such as fees or capacity.
+
+---
+
+## 20. Batch Management by Student / Parent
+
+### Student
+
+Should be able to:
+
+* View their enrolled batches.
+* View schedules.
+* Access batch materials.
+* View assignments.
+* View attendance.
+* Receive batch announcements.
+
+### Parent / Guardian
+
+Should be able to:
+
+* View their child's batches.
+* View schedules.
+* Track attendance.
+* Receive announcements.
+* View relevant progress.
+* Communicate with the organization/tutor.
+
+Neither should have access to other students' information.
+
+---
+
+## 21. Batch Dashboard
+
+The Organization Owner might see:
+
+```text
+Mathematics — Class 10A
+
+Status: Active
+Students: 24 / 25
+Tutor: Amit
+Schedule: M/W/F · 5:00 PM
+
+────────────────────────
+
+NEXT CLASS
+Wednesday · 5:00 PM
+Room 101
+
+────────────────────────
+
+ATTENDANCE
+Average: 89%
+
+────────────────────────
+
+NEEDS ATTENTION
+• 3 students with low attendance
+• 4 pending assignments
+
+────────────────────────
+
+QUICK ACTIONS
+[ View Students ]
+[ Take Attendance ]
+[ Add Material ]
+[ Send Announcement ]
+```
+
+The tutor's version should be more focused:
+
+```text
+Mathematics — Class 10A
+
+Next Class
+Wednesday · 5:00 PM
+
+24 Students
+
+[ Take Attendance ]
+[ View Students ]
+[ Add Material ]
+[ Assignment ]
+```
+
+---
+
+## 22. Important Product Principles
+
+### 1. Batch is an operational unit
+
+The batch represents the actual group being taught.
+
+### 2. Batch belongs to a Course
+
+A batch should normally be created under a course.
+
+### 3. Students join through Enrollment
+
+Students should not simply be permanently attached to a batch.
+
+### 4. Attendance belongs to Class Sessions
+
+A batch has many class sessions, and attendance is recorded for each session.
+
+### 5. Schedule belongs to the Batch, but exceptions belong to Sessions
+
+The batch defines the recurring schedule.
+
+Individual sessions can then be cancelled, rescheduled, or modified.
+
+### 6. Batch history should be preserved
+
+Completed batches should normally be archived rather than deleted.
+
+---
+
+## 23. Core Relationship
+
+The relationship between the main entities is:
+
+```text
+Organization
+     │
+     └── Course
+           │
+           └── Batch
+                │
+        ┌───────┼────────┐
+        ▼       ▼        ▼
+     Tutor   Sessions  Enrollment
+                       │
+                       ▼
+                    Student
+```
+
+And the learning activity flows through the batch:
+
+```text
+Course
+  │
+  ▼
+Batch
+  │
+  ├── Class Sessions
+  │      └── Attendance
+  │
+  ├── Students
+  │      └── Progress
+  │
+  ├── Materials
+  │
+  ├── Assignments
+  │
+  └── Announcements
+```
+
+### Core Principle
+
+> **A Course defines the learning offering; a Batch turns that offering into a real, scheduled learning experience for a specific group of students.**

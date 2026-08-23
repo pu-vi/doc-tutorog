@@ -1,0 +1,748 @@
+---
+title: Enrollment
+sidebar_position: 3
+---
+
+## 1. Overview
+
+An **Enrollment** represents a student's participation in a specific Batch offered by an Organization.
+
+While a Course defines **what is being taught** and a Batch defines **when and how it is delivered**, the Enrollment establishes the relationship between:
+
+> **Student ↔ Batch**
+
+For example:
+
+```text id="6x8w8x"
+Course
+Mathematics Foundation
+       │
+       ▼
+Batch
+Class 10A — Evening
+       │
+       ▼
+Enrollment
+Aarav Sharma → Class 10A
+```
+
+Enrollment is therefore the point where a prospective learner becomes an **active participant in an organization's learning program**.
+
+---
+
+## 2. Purpose of Enrollment
+
+Enrollment provides a structured record of a student's participation in a batch.
+
+It allows Tutorog to track:
+
+* Which student joined which batch.
+* When they joined.
+* Their enrollment status.
+* Their relationship with the organization.
+* Their fee arrangement.
+* Their participation history.
+* When they leave or complete the program.
+
+Enrollment also acts as the foundation for several other features:
+
+```text
+Enrollment
+    │
+    ├── Attendance
+    ├── Fees / Payments
+    ├── Learning Progress
+    ├── Assignments
+    ├── Materials
+    ├── Feedback
+    └── Communication
+```
+
+---
+
+## 3. Course, Batch & Enrollment
+
+These three concepts should remain separate.
+
+### Course
+
+> **What is being offered?**
+
+### Batch
+
+> **When and to whom is it being delivered?**
+
+### Enrollment
+
+> **Which student is participating in this batch?**
+
+Example:
+
+```text id="6f9k3e"
+Organization
+    │
+    ▼
+Course: Mathematics Foundation
+    │
+    ├── Batch A — Evening
+    │       │
+    │       ├── Enrollment → Aarav
+    │       ├── Enrollment → Ananya
+    │       └── Enrollment → Rohan
+    │
+    └── Batch B — Weekend
+            │
+            ├── Enrollment → Priya
+            └── Enrollment → Rahul
+```
+
+This separation allows the same Course to be delivered through multiple Batches while each student's participation remains independently tracked.
+
+---
+
+## 4. Enrollment Lifecycle
+
+An enrollment can follow this lifecycle:
+
+```text id="p2h4wq"
+Requested
+    ↓
+Pending
+    ↓
+Approved
+    ↓
+Active
+    ↓
+Completed
+```
+
+Other possible outcomes include:
+
+```text
+Requested → Rejected
+Pending   → Cancelled
+Active    → Withdrawn
+Active    → Suspended
+```
+
+### Requested
+
+The student or parent has expressed interest in joining.
+
+### Pending
+
+The organization needs to review or complete the enrollment.
+
+### Approved
+
+The organization has accepted the student.
+
+### Active
+
+The student is currently participating in the batch.
+
+### Completed
+
+The student has successfully completed the enrollment period or course.
+
+### Withdrawn
+
+The student left before completion.
+
+### Cancelled
+
+The enrollment was cancelled before becoming active.
+
+### Rejected
+
+The organization declined the enrollment request.
+
+---
+
+## 5. Enrollment Sources
+
+Students can enter an organization through different pathways.
+
+### Organization-led Enrollment
+
+A student joins through the organization directly.
+
+```text id="e0c3m7"
+Student visits institute
+       ↓
+Organization creates enrollment
+       ↓
+Student joins batch
+```
+
+### Tutorog Discovery
+
+A parent/student discovers an organization through Tutorog.
+
+```text id="v3w2q1"
+Discover Organization
+       ↓
+View Course
+       ↓
+Select Batch
+       ↓
+Request Enrollment
+       ↓
+Organization Approves
+       ↓
+Enrollment Active
+```
+
+### Invitation
+
+An organization may invite a student to join a batch.
+
+```text id="z1y9df"
+Organization
+      ↓
+Invite Student
+      ↓
+Student / Parent Accepts
+      ↓
+Enrollment Created
+```
+
+Tutorog should support multiple enrollment sources without changing the underlying enrollment model.
+
+---
+
+## 6. Enrollment Request
+
+A **request** represents a student's intention to join.
+
+The request may contain:
+
+* Student
+* Parent/Guardian
+* Organization
+* Course
+* Preferred Batch
+* Message
+* Requested date
+* Status
+
+Example:
+
+```text id="3j0s5e"
+Enrollment Request
+
+Student: Aarav
+Course: Mathematics Foundation
+Preferred Batch: Class 10A
+Requested by: Parent
+
+Status: Pending
+```
+
+The organization can then:
+
+**Approve · Reject · Ask for Information**
+
+---
+
+## 7. Approval Workflow
+
+For organizations that require approval:
+
+```text id="f1b9q2"
+Parent / Student
+       │
+       ▼
+Request Enrollment
+       │
+       ▼
+Organization
+       │
+       ▼
+Review Request
+       │
+   ┌───┴────┐
+   ▼        ▼
+Approve   Reject
+   │
+   ▼
+Enrollment Created
+   │
+   ▼
+Student Joins Batch
+```
+
+The organization should be able to configure whether enrollment requires approval.
+
+---
+
+## 8. Direct Enrollment
+
+Some organizations may want students to join immediately.
+
+For example, a public workshop may have available seats and no approval requirement.
+
+The flow becomes:
+
+```text id="5f8d5d"
+Course
+   ↓
+Select Batch
+   ↓
+Confirm Enrollment
+   ↓
+Enrollment Active
+```
+
+If payment is required:
+
+```text id="4a6t5h"
+Select Batch
+   ↓
+Confirm Enrollment
+   ↓
+Payment
+   ↓
+Enrollment Active
+```
+
+Payment and enrollment should still remain separate concepts even when they happen in the same user journey.
+
+---
+
+## 9. Enrollment Information
+
+An enrollment should capture information relevant to the student's participation.
+
+### Identity
+
+* Student
+* Parent/Guardian where applicable
+* Organization
+* Course
+* Batch
+
+### Enrollment
+
+* Enrollment date
+* Start date
+* End date
+* Status
+* Enrollment source
+
+### Financial
+
+* Agreed fee
+* Discount
+* Payment arrangement
+* Outstanding amount
+
+### Administrative
+
+* Notes
+* Withdrawal reason where applicable
+* Completion status
+
+The enrollment should preserve the **actual agreement at the time of joining**, rather than relying only on the current Course or Batch information.
+
+---
+
+## 10. Enrollment & Fees
+
+Enrollment and payment should be related but separate.
+
+For example:
+
+```text id="2b2x8w"
+Enrollment
+₹12,000 agreed fee
+       │
+       ├── Payment ₹4,000
+       ├── Payment ₹4,000
+       └── Payment ₹4,000
+```
+
+This allows Tutorog to support:
+
+* Installments.
+* Discounts.
+* Partial payments.
+* Outstanding balances.
+* Different payment schedules.
+
+Importantly, if the course price later changes from ₹12,000 to ₹15,000, the original enrollment should still retain the agreed ₹12,000 fee.
+
+---
+
+## 11. Enrollment & Attendance
+
+Attendance should be associated with the student's participation in the batch.
+
+```text id="d5t8x4"
+Enrollment
+    │
+    ▼
+Batch
+    │
+    ├── Session 1 → Present
+    ├── Session 2 → Present
+    ├── Session 3 → Absent
+    └── Session 4 → Present
+```
+
+This allows Tutorog to calculate attendance for the student's enrollment.
+
+If the student changes batches, their historical attendance should remain associated with the appropriate enrollment/batch.
+
+---
+
+## 12. Enrollment & Learning Progress
+
+Progress is also tied to the student's learning relationship.
+
+For example:
+
+```text id="g9j7a4"
+Enrollment
+     │
+     ▼
+Course
+     │
+     ├── Topic 1 ✓
+     ├── Topic 2 ✓
+     ├── Topic 3 →
+     └── Topic 4 ○
+```
+
+This allows a student's learning history to remain meaningful even after they leave a batch.
+
+---
+
+## 13. Changing Batches
+
+A student may need to move from one batch to another.
+
+For example:
+
+```text id="6l4j2h"
+Batch A
+   │
+   │ Transfer
+   ▼
+Batch B
+```
+
+The original enrollment should generally not simply be overwritten.
+
+Instead:
+
+```text id="w3p5cy"
+Enrollment #1
+Batch A
+Status: Transferred
+
+        ↓
+
+Enrollment #2
+Batch B
+Status: Active
+```
+
+This preserves the student's history.
+
+---
+
+## 14. Withdrawal
+
+A student may leave before completing a course.
+
+The enrollment should transition to:
+
+**Withdrawn**
+
+The system may capture:
+
+* Withdrawal date.
+* Reason where appropriate.
+* Refund information.
+* Outstanding fees.
+* Last attended session.
+
+Historical learning and attendance records should remain available according to the organization's retention and privacy policies.
+
+---
+
+## 15. Completion
+
+When a student completes a course/batch:
+
+```text id="1m6f1k"
+Active
+  ↓
+Course Completed
+  ↓
+Enrollment Completed
+```
+
+The student should retain the completed course in their learning history.
+
+This can eventually support:
+
+* Certificates.
+* Achievements.
+* Course completion records.
+* Portfolio/history.
+* Reviews.
+
+---
+
+## 16. Parent & Student Experience
+
+For a Parent/Guardian, enrollment should answer:
+
+> **"Where is my child enrolled?"**
+
+For a Student:
+
+> **"What am I currently learning?"**
+
+For an Organization:
+
+> **"Which students are enrolled in my courses and batches?"**
+
+For a Tutor:
+
+> **"Which students am I responsible for teaching?"**
+
+The same Enrollment record connects these experiences.
+
+---
+
+## 17. Organization Owner Experience
+
+The Organization Owner should be able to:
+
+* View enrollment requests.
+* Approve/reject requests.
+* Create enrollments manually.
+* View active enrollments.
+* Transfer students between batches.
+* Withdraw students.
+* View enrollment history.
+* View enrollment-related financial information.
+* Monitor enrollment numbers.
+
+Example dashboard:
+
+```text id="82kqsz"
+ENROLLMENTS
+
+Pending Requests       5
+Active Students       128
+New This Month         18
+Withdrawn               3
+
+[ Review Requests ]
+[ View Students ]
+```
+
+---
+
+## 18. Tutor Experience
+
+Tutors generally do not need to manage enrollment administration.
+
+They should be able to see the result of enrollment:
+
+```text id="2pr8d0"
+My Batch
+Mathematics — Class 10A
+
+24 Active Students
+```
+
+They may see when:
+
+* A student joins.
+* A student leaves.
+* A student transfers into/out of their batch.
+
+But approval, fees, and enrollment administration should normally remain with the Organization Owner or authorized staff.
+
+---
+
+## 19. Student / Parent Experience
+
+Students and parents should be able to see enrollment status.
+
+For example:
+
+```text id="r9t7me"
+Mathematics Foundation
+
+Batch:
+Class 10A — Evening
+
+Status:
+Active
+
+Started:
+1 August 2026
+
+Tutor:
+Amit Sharma
+```
+
+For a pending request:
+
+```text
+Mathematics Foundation
+
+Status:
+Enrollment Request Pending
+
+Submitted:
+20 August 2026
+```
+
+This avoids ambiguity about whether the student has actually joined the organization.
+
+---
+
+## 20. Enrollment Notifications
+
+Important enrollment events should trigger notifications where appropriate.
+
+Examples:
+
+### Parent/Student
+
+* Enrollment request submitted.
+* Enrollment approved.
+* Enrollment rejected.
+* Enrollment cancelled.
+* Batch changed.
+* Enrollment completed.
+
+### Organization
+
+* New enrollment request.
+* Student accepted.
+* Student withdrawal request.
+
+### Tutor
+
+* New student joined assigned batch.
+* Student transferred out.
+* Student withdrawn.
+
+Notifications should be relevant to each role.
+
+---
+
+## 21. Enrollment vs Membership
+
+An important distinction:
+
+**Enrollment** represents participation in a specific learning program.
+
+It should not be used as a general relationship between a person and an organization.
+
+For example:
+
+```text
+Parent → Organization
+```
+
+is not necessarily an enrollment.
+
+Instead:
+
+```text
+Student
+   ↓
+Enrollment
+   ↓
+Batch
+   ↓
+Course
+   ↓
+Organization
+```
+
+This keeps the data model flexible for parents who manage multiple children and students who may enroll in multiple courses.
+
+---
+
+## 22. Important Product Principles
+
+### 1. Enrollment belongs to a Student
+
+Not directly to the User account.
+
+A parent may manage multiple students, and each student can have independent enrollments.
+
+### 2. Enrollment points to a Batch
+
+Because the student participates in a specific scheduled learning group.
+
+### 3. Course is inherited through the Batch
+
+The Batch belongs to a Course, so the enrollment can understand the course through the batch relationship.
+
+### 4. Enrollment has its own lifecycle
+
+A student can request, join, transfer, withdraw, and complete a program.
+
+### 5. Enrollment preserves history
+
+Historical enrollments should not be deleted simply because a student leaves.
+
+### 6. Financial agreements belong to the enrollment context
+
+The student's agreed fee should remain historically accurate even if the course's current price changes.
+
+---
+
+## 23. Core Relationship
+
+The fundamental relationship is:
+
+```text id="h4z0f8"
+Organization
+     │
+     ▼
+  Course
+     │
+     ▼
+  Batch
+     │
+     ▼
+Enrollment
+     │
+     ▼
+ Student
+```
+
+With the parent relationship:
+
+```text id="v9s2g4"
+User
+ │
+ └── Parent / Guardian
+          │
+          ├── Student A
+          │      └── Enrollment
+          │
+          ├── Student B
+          │      └── Enrollment
+          │
+          └── Student C
+                 └── Enrollment
+```
+
+And the enrollment becomes the bridge between the learner and the organization's actual learning operation.
+
+### Core Principle
+
+> **Enrollment is the record that turns a Student from a prospective learner into a participant in a specific Batch, while preserving their learning, attendance, financial, and participation history.**

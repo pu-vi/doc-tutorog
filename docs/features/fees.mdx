@@ -1,0 +1,672 @@
+---
+title: Fees Management
+sidebar_position: 4
+---
+
+## 1. Overview
+
+The **Fees & Payments** module helps an Organization manage the financial relationship with its students.
+
+For the MVP, Tutorog should primarily focus on **fee management and payment tracking** rather than attempting to become a full accounting system.
+
+The system should help an organization answer:
+
+> **Who needs to pay, how much have they paid, what is outstanding, and when is it due?**
+
+For parents and students, it should answer:
+
+> **What do I owe, what have I already paid, and what payments are coming up?**
+
+---
+
+## 2. Purpose
+
+The Fees module should allow organizations to:
+
+* Define fees for courses or enrollments.
+* Record payments.
+* Track outstanding balances.
+* Manage payment schedules.
+* Issue payment receipts.
+* View payment history.
+* Send payment reminders.
+* Monitor collection performance.
+
+For parents/students, it should provide:
+
+* Clear fee information.
+* Payment history.
+* Outstanding balances.
+* Due dates.
+* Receipts.
+* Payment status.
+
+---
+
+## 3. Fees vs Payments
+
+Tutorog should distinguish between a **fee obligation** and an actual **payment**.
+
+### Fee
+
+Defines:
+
+> **How much the student is expected to pay.**
+
+### Payment
+
+Records:
+
+> **How much the student actually paid.**
+
+For example:
+
+```text id="2v4m2h"
+Enrollment
+Mathematics Foundation
+
+Agreed Fee: ₹12,000
+       │
+       ├── Payment: ₹4,000
+       ├── Payment: ₹4,000
+       └── Payment: ₹2,000
+       
+Paid: ₹10,000
+Outstanding: ₹2,000
+```
+
+This separation is important for installments, partial payments, refunds, and historical records.
+
+---
+
+## 4. Relationship with Course & Enrollment
+
+A Course may define a **default price**, but the actual financial obligation should be associated with the student's enrollment.
+
+For example:
+
+```text id="k6y7fw"
+Course
+Mathematics Foundation
+Default Fee: ₹12,000
+       │
+       ▼
+Enrollment
+Aarav
+Agreed Fee: ₹10,000
+Discount: ₹2,000
+       │
+       ▼
+Payments
+₹5,000 + ₹5,000
+```
+
+This allows the organization to provide:
+
+* Discounts.
+* Scholarships.
+* Special pricing.
+* Different payment arrangements.
+
+The original agreed amount should remain unchanged even if the Course's current price changes later.
+
+---
+
+## 5. Fee Lifecycle
+
+A fee obligation can follow:
+
+```text id="j8x3kw"
+Created
+   ↓
+Due
+   ↓
+Partially Paid
+   ↓
+Paid
+```
+
+Other possible states include:
+
+```text id="8d6q4p"
+Due → Overdue
+Due → Waived
+Due → Cancelled
+```
+
+### Created
+
+The financial obligation has been established.
+
+### Due
+
+Payment is expected.
+
+### Partially Paid
+
+Some amount has been received but a balance remains.
+
+### Paid
+
+The full amount has been received.
+
+### Overdue
+
+The payment has passed its due date.
+
+### Waived
+
+The organization has chosen not to collect the amount.
+
+---
+
+## 6. Payment Status
+
+Payment status should be derived from the relationship between the amount due and payments received.
+
+For example:
+
+```text id="5j6r1v"
+Fee: ₹12,000
+
+Paid: ₹8,000
+       ↓
+Status: Partially Paid
+       ↓
+Outstanding: ₹4,000
+```
+
+Possible statuses:
+
+* Pending
+* Partially Paid
+* Paid
+* Overdue
+* Waived
+* Cancelled
+
+---
+
+## 7. Payment Plans
+
+Organizations may collect fees in different ways.
+
+### Full Payment
+
+```text id="s8y4wp"
+₹12,000
+Due: 1 September
+```
+
+### Monthly
+
+```text id="7j3p1m"
+₹2,000 × 6 months
+```
+
+### Installments
+
+```text id="f2k9q8"
+₹4,000 — 1 Sep
+₹4,000 — 1 Nov
+₹4,000 — 1 Jan
+```
+
+The MVP should support simple payment schedules without attempting to model every possible accounting arrangement.
+
+---
+
+## 8. Recording a Payment
+
+The Organization Owner or authorized staff should be able to record a payment.
+
+Typical workflow:
+
+```text id="6k4z3d"
+Select Student
+      ↓
+Select Enrollment
+      ↓
+Select Fee / Installment
+      ↓
+Enter Amount
+      ↓
+Select Payment Method
+      ↓
+Record Payment
+      ↓
+Receipt Generated
+```
+
+Payment methods may include:
+
+* Cash
+* Bank transfer
+* UPI
+* Card
+* Online payment
+* Other
+
+The initial MVP can support manually recorded payments, with online payment integrations added later.
+
+---
+
+## 9. Payment Information
+
+A payment record should capture information such as:
+
+* Student
+* Enrollment
+* Organization
+* Amount
+* Payment date
+* Payment method
+* Transaction/reference number where applicable
+* Receipt number
+* Notes
+* Payment status
+
+Example:
+
+```text id="x3q2cc"
+Payment
+
+Student: Aarav
+Enrollment: Mathematics Foundation
+
+Amount: ₹4,000
+Date: 25 Aug 2026
+Method: UPI
+
+Reference: UPI-XXXX
+
+Status: Successful
+```
+
+---
+
+## 10. Receipts
+
+The organization should be able to provide a receipt for recorded payments.
+
+A receipt may contain:
+
+* Organization name
+* Student name
+* Course/batch
+* Amount paid
+* Payment date
+* Payment method
+* Receipt number
+* Remaining balance where applicable
+
+Parents should be able to access their payment receipts from their account.
+
+The receipt should represent the **actual payment**, not simply the fee obligation.
+
+---
+
+## 11. Parent / Guardian Experience
+
+The parent should have a clear view of their children's fees.
+
+For example:
+
+```text id="1w5n5m"
+MY CHILDREN
+
+Aarav
+Mathematics Foundation
+
+Total Fee       ₹12,000
+Paid             ₹8,000
+Outstanding      ₹4,000
+
+Next Due:
+10 September
+
+[ View Details ]
+```
+
+For multiple children:
+
+```text id="v3d7r1"
+Aarav
+Outstanding: ₹4,000
+
+Ananya
+Paid in Full
+
+Rohan
+Outstanding: ₹2,500
+```
+
+The parent should never have to manually calculate what is owed.
+
+---
+
+## 12. Student Experience
+
+Students may have limited access to financial information depending on their age and organization settings.
+
+Where permitted, a student may see:
+
+* Course fee.
+* Payment status.
+* Outstanding amount.
+* Due dates.
+
+For parent-managed children, the parent may be the primary person responsible for financial information.
+
+This should be configurable based on the organization's policies and the student's circumstances.
+
+---
+
+## 13. Organization Owner Experience
+
+The Organization Owner should have a financial overview.
+
+Example:
+
+```text id="8j5z4k"
+FEES OVERVIEW
+
+Expected        ₹2,40,000
+Collected       ₹1,95,000
+Outstanding       ₹45,000
+
+────────────────────────
+
+NEEDS ATTENTION
+
+12 payments due
+5 payments overdue
+3 partial payments
+```
+
+The owner should be able to drill down into individual students and enrollments.
+
+---
+
+## 14. Fee Dashboard
+
+Useful MVP metrics include:
+
+### Collection
+
+* Total fees expected.
+* Total collected.
+* Total outstanding.
+
+### Status
+
+* Paid.
+* Partially paid.
+* Due.
+* Overdue.
+
+### Activity
+
+* Payments received today.
+* Payments received this month.
+* Recent payments.
+
+### Action Items
+
+* Upcoming due payments.
+* Overdue payments.
+* Missing payment records.
+
+The dashboard should focus on **actionable financial information**, rather than trying to replace accounting software.
+
+---
+
+## 15. Payment Reminders
+
+Tutorog should eventually help organizations remind parents/students about upcoming or overdue payments.
+
+Possible reminders:
+
+### Upcoming
+
+> Your Mathematics Foundation fee of ₹2,000 is due on 10 September.
+
+### Due Today
+
+> Your Mathematics Foundation fee of ₹2,000 is due today.
+
+### Overdue
+
+> Your Mathematics Foundation fee of ₹2,000 is overdue.
+
+Reminder channels may eventually include:
+
+* In-app notification.
+* Email.
+* SMS.
+* WhatsApp.
+
+The MVP can start with in-app notifications and email, depending on the overall notification infrastructure.
+
+---
+
+## 16. Online Payments
+
+Online payment processing can be introduced as a separate capability.
+
+The flow could become:
+
+```text id="z6g9qx"
+Parent
+  ↓
+View Outstanding Fee
+  ↓
+Pay Online
+  ↓
+Payment Gateway
+  ↓
+Payment Successful
+  ↓
+Tutorog Records Payment
+  ↓
+Receipt
+```
+
+Payment gateways should not be tightly coupled to the core fee model.
+
+This allows Tutorog to support different providers in the future.
+
+---
+
+## 17. Refunds
+
+Refunds should be treated separately from payments.
+
+For example:
+
+```text id="8f4q5p"
+Fee Obligation
+₹12,000
+
+Payments
+₹12,000
+
+Refund
+₹2,000
+
+Net Paid
+₹10,000
+```
+
+The original payment should not simply be deleted or modified.
+
+A refund should create a separate financial record so the history remains auditable.
+
+---
+
+## 18. Discounts & Waivers
+
+Organizations may provide:
+
+* Discounts.
+* Scholarships.
+* Promotional offers.
+* Partial fee waivers.
+
+For example:
+
+```text id="4n8y2d"
+Course Fee          ₹12,000
+Discount             ₹2,000
+────────────────────────────
+Agreed Fee          ₹10,000
+```
+
+The discount should be captured explicitly rather than simply changing the course price.
+
+This preserves the original course pricing and the student's actual agreement.
+
+---
+
+## 19. Historical Accuracy
+
+Financial records should be treated as historical records.
+
+For example:
+
+```text id="7g2s5k"
+2026 Enrollment
+Agreed Fee: ₹10,000
+
+2027 Course Price
+₹12,000
+```
+
+The 2026 enrollment should continue to show:
+
+> **₹10,000**
+
+It should not automatically change because the course's current price was updated.
+
+Similarly, recorded payments should not be silently edited to change historical information.
+
+Corrections should preferably be handled through appropriate adjustment or audit mechanisms.
+
+---
+
+## 20. Fees & Enrollment Lifecycle
+
+The overall relationship is:
+
+```text id="3f7n2x"
+Course
+   │
+   │ Default Price
+   ▼
+Batch
+   │
+   ▼
+Enrollment
+   │
+   │ Agreed Fee
+   ▼
+Fee / Payment Schedule
+   │
+   ├── Payment
+   ├── Payment
+   └── Payment
+```
+
+This keeps the financial model connected to the student's actual participation.
+
+---
+
+## 21. Permissions
+
+### Platform Administrator
+
+Should generally have visibility for:
+
+* Platform support.
+* Dispute resolution.
+* Fraud or abuse investigation.
+
+They should not normally manage an organization's everyday fee collection.
+
+### Organization Owner
+
+Can:
+
+* Define fees.
+* Manage fee schedules.
+* Record payments.
+* Issue receipts.
+* View outstanding fees.
+* Send reminders.
+* Manage refunds/adjustments where authorized.
+
+### Tutor / Trainer
+
+Normally should have **no fee management access**, unless explicitly granted by the organization.
+
+### Parent / Guardian
+
+Can:
+
+* View fees for their children.
+* View payment history.
+* View receipts.
+* Make payments where supported.
+
+### Student
+
+Access depends on age and organization policy.
+
+---
+
+## 22. What Fees Should NOT Become
+
+The MVP should avoid turning Tutorog into a complete accounting platform.
+
+Tutorog does not initially need to handle:
+
+* Full accounting ledgers.
+* Tax accounting.
+* Payroll.
+* Expense management.
+* Organization bookkeeping.
+* Bank reconciliation.
+* Financial statements.
+
+The primary purpose is:
+
+> **Manage the financial relationship between an organization and its students.**
+
+---
+
+## 23. Success Criteria
+
+The Organization Owner should feel:
+
+> **"I know exactly who has paid and who still owes money."**
+
+The Parent should feel:
+
+> **"I always know what I need to pay and where my money went."**
+
+The Student should feel:
+
+> **"I can see the relevant fee information without being overwhelmed by financial administration."**
+
+Tutorog should provide:
+
+* **Clarity** — fees are easy to understand.
+* **Accuracy** — payment history is reliable.
+* **Transparency** — parents know what they owe.
+* **Traceability** — financial actions are recorded.
+* **Convenience** — payments and receipts are easy to manage.
+* **Scalability** — the model can support online payments later.
+
+### Core Principle
+
+> **Tutorog's Fees & Payments module should make student fee management simple and transparent without attempting to replace an organization's full accounting system.**
